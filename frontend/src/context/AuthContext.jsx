@@ -23,11 +23,11 @@ const authReducer = (state,action)=>{
             return{
                 user:action.payload.user,
                 token:action.payload.token,
-                role:action.payload.role
+                role:action.payload.role,
             };
 
             case 'LOGOUT':            
-           return {
+            return {
             user:null,
             role:null,
             token:null,
@@ -47,7 +47,7 @@ export const AuthContextProvider = ({children}) => {
         localStorage.setItem('role', state.role)
     },[state]);
 
-    return <authContext.Provider value={{user:state.user, token:state.toke, role:state.role, dispatch}}>
+    return <authContext.Provider value={{user:state.user, token:state.token, role:state.role, dispatch}}>
         {children}
     </authContext.Provider>
 }
