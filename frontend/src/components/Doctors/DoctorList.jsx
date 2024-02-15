@@ -3,7 +3,8 @@ import DoctorCard from './DoctorCard';
 
 import { BASE_URL } from '../../config';
 import useFetchData from '../../hooks/useFetchData';
-import Loader from '../../components/Error/Error';
+import Error from '../../components/Error/Error';
+import Loader from '../Loader/Loading';
 
 const DoctorList = () => {
 
