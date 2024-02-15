@@ -1,10 +1,10 @@
-import { doctors } from '../../assets/data/doctors';
 import DoctorCard from '../../components/Doctors/DoctorCard';
 import Testimonial from '../../components/Testimonial/Testimonial';
 
 import { BASE_URL } from '../../config';
 import useFetchData from '../../hooks/useFetchData';
-import Loader from '../../components/Error/Error';
+import Loader from '../../components/Loader/Loading';
+import Error from '../../components/Error/Error'
 import { useEffect, useState } from 'react';
 
 const Doctors = () => {
@@ -27,8 +27,9 @@ const Doctors = () => {
 
   },[query])
 
-  const { data:doctors, loading, error } = useFetchData(`${BASE_URL}/doctors?query=${debounceQuery}`)
-  return <>
+  const { data: doctors, loading, error } = useFetchData(`${BASE_URL}/doctors?query=${debounceQuery}`)
+  return (
+  <>
   <section className='bg-[#fff9ea]'>
     <div className="container text-center">
         <h2 className="heading">Find a Doctor</h2>
@@ -73,6 +74,6 @@ const Doctors = () => {
     </div>
    </section>
   </>
-}
+)}
 
 export default Doctors
