@@ -11,15 +11,15 @@ const navLinks = [
   },
   {
     path: '/doctors',
-    display: 'Find a Doctor'
+    display: 'Pesquisar'
   },
   {
     path: '/services',
-    display: 'Services'
+    display: 'Serviços'
   },
   {
     path: '/contact',
-    display: 'Contact'
+    display: 'Contacto'
   },
 
 ]
