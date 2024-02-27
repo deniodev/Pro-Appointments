@@ -3,15 +3,15 @@ const Contact = () => {
     <section>
       <div className="px-4 mx-auto max-screen-md">
         <h2 className="heading text-center">
-          Contact Us
+          Contacte-nos
         </h2>
         <p className='mb-8 lg:mb-16 font-light text-center text__para'>
-          Got a technical issue? Want to send feedback about a better feature? Let us know.
+        Tem um problema técnico? Quer enviar feedback sobre um recurso melhor? Nos informe.
         </p>
         <form action="#" className='space-y-8'>
           <div>
             <label htmlFor="email"className='form__label'>
-              Your Email
+              Email
             </label>
             <input type="email"
             id='email'
@@ -21,29 +21,29 @@ const Contact = () => {
           <div>
             <label htmlFor="subject"
             className='form__label'>
-              Subject
+              Assunto
             </label>
             <input type="text"
             id='subject'
-            placeholder='Let us know how we can help you'
+            placeholder='Deixe-nos saber como podemos ajudá-lo'
             className="form__input mt-1" />
           </div>
           <div className="sm:col-span-2">
             <label htmlFor="message"
             className='form__label'>
-              Your Message
+              Sua mensagem
             </label>
             <textarea 
             rows='6'
             type="text"
             id='message'
-            placeholder='Leave a comment....'
+            placeholder='Deixe o seu comentario....'
             className="form__input mt-1" />
           </div>
           <button 
           type="submit"
           className="btn rounded sm:w-fit">
-            Submit
+            Enviar
           </button>
         </form>
       </div>
