@@ -31,7 +31,7 @@ const Home = () => {
               Simplifique sua busca e comece a trabalhar hoje mesmo!
             </p>
 
-            <button className='btn'>Marque um encontro</button>
+            <button className='btn'>Agende um encontro</button>
           </div>
     </div>
         {/* ========= hero content ============ */}
@@ -124,7 +124,7 @@ const Home = () => {
 
         <div className="mt-[30px]">
           <h2 className='text-[26px] leading-9 text-headingColor font-[700] text-center'>
-            Marque o Encontro
+            Agende um Encontro
           </h2>
           <p className='text-[16px] leading-7 text-textColor font-[400] mt-4 text-center'>
           Agende facilmente uma reunião com o profissional escolhido através da nossa plataforma integrada. 
