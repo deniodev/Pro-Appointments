@@ -30,45 +30,37 @@ const quickLinks01 = [
   },
   {
     path: "/",
-    display: "About Us",
+    display: "Nossa missão",
   },
   {
     path: "/",
-    display: "Services",
-  },
-  {
-    path: "/",
-    display: "Blog",
+    display: "Serviços",
   },
 ];
 
 const quickLinks02 = [
   {
     path: "/find-a-doctor",
-    display: "Find a Doctor",
+    display: "Pesquisar Profissional",
   },
   {
     path: "/",
-    display: "Request an Appointment",
+    display: "Agendar um encontro",
   },
   {
     path: "/",
-    display: "Find a Location",
+    display: "Pesquisar região",
   },
-  {
-  path: "/",
-  display: "Get a Opinion",
-},
 ];
 
 const quickLinks03 = [
   {
     path: "/",
-    display: "Donate",
+    display: "Donativo",
   },
   {
     path: "/contact",
-    display: "Contact Us",
+    display: "Contacto",
   },
 ];
 
@@ -119,7 +111,7 @@ const Footer = () => {
 
         <div>
             <h2 className="text-[20px] leading-[30px] font-[700] mb-6 text-headingColor">
-              I want to:
+              Eu quero:
             </h2>
 
             <ul>
@@ -136,7 +128,7 @@ const Footer = () => {
 
         <div>
             <h2 className="text-[20px] leading-[30px] font-[700] mb-6 text-headingColor">
-              Support
+              Suporte
             </h2>
 
             <ul>
