@@ -82,14 +82,14 @@ const Signup = () => {
           {/* ========== sign up form ========== */}
           <div className="rounded-l-lg lg:pl-16 py-10">
             <h3 className="text-headingColor text-[22px] leading-9 font-bold mb-10">
-              Create an <span className='text-primaryColor'>account</span>
+              Registe a sua <span className='text-primaryColor'>conta</span>
             </h3>
 
           <form onSubmit={submitHandler}>
           <div className="mb-5">
             <input 
             type="text"
-            placeholder="Full Name"
+            placeholder="Nome Completo"
             name="name"
             value={formData.name}
             onChange={handleInputChange}
@@ -103,7 +103,7 @@ const Signup = () => {
           <div className="mb-5">
             <input 
             type="email"
-            placeholder="Enter Your Email"
+            placeholder="Seu Email"
             name="email"
             value={formData.email}
             onChange={handleInputChange}
@@ -130,29 +130,27 @@ const Signup = () => {
 
           <div className="mb-5 flex items-center justify-between">         
             <label className='text-headingColor font-bold text-[16px] leading-7'>
-              Are you a:
+            Você é:
               <select
                name="role"
                value={formData.role}
                onChange={handleInputChange}
                className='text-textColor font-semibold text-[15px] leading-7 px-4 py-3 focus:outline-none'
               >
-                <option value="patient">Patient</option>
-                <option value="doctor">Doctor</option>
+                <option value="patient">Cliente</option>
+                <option value="doctor">Profissional</option>
               </select>
             </label>
 
             <label className='text-headingColor font-bold text-[16px] leading-7'>
-              Gender:
+            Género:
               <select
-               name="gender"
+               name="g"
                value={formData.gender}
                onChange={handleInputChange}
                className='text-textColor font-semibold text-[15px] leading-7 px-4 py-3 focus:outline-none'>
-                <option value="">Select</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
+                <option value="male">Masculino</option>
+                <option value="female">Femenino</option>
               </select>
             </label>
             </div> 
@@ -184,7 +182,7 @@ const Signup = () => {
             text-[15px] leading-6 overflow-hidden bg-[#0066ff46] text-headingColor font-semibold
             rounded-lg truncate cursor-pointer'
             >
-              Upload Photo
+              Carregar foto
             </label>
           </div> 
           </div>  
@@ -195,12 +193,12 @@ const Signup = () => {
             type="submit"
             className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3"
             >
-              { loading ? <HashLoader size={35} color="#ffffff"/> : 'Sign Up'}
+              { loading ? <HashLoader size={35} color="#ffffff"/> : 'Registar'}
             </button>
           </div>
 
           <p className="mt-5 text-textColor text-center">
-            Already have  an account? 
+          Já tem uma conta? 
             <Link to='/login' className="text-primaryColor font-medium ml-1">
               Login
             </Link>

@@ -148,40 +148,40 @@ const Profile = ({ doctorData }) => {
     deleteItem("experiences", index);
   };
 
-  const addTimeSlot = (e) => {
-    e.preventDefault();
+  // const addTimeSlot = (e) => {
+  //   e.preventDefault();
 
-    addItem("timeSlots", {
-      day: "sunday",
-      startingTime: "10:00",
-      endingTime: "11:30",
-    });
-  };
+  //   addItem("timeSlots", {
+  //     day: "sunday",
+  //     startingTime: "10:00",
+  //     endingTime: "11:30",
+  //   });
+  // };
 
-  const handleTimeSlotChange = (event, index) => {
-    handleReusableInputChangeFunc("timeSlots", index, event);
-  };
+  // const handleTimeSlotChange = (event, index) => {
+  //   handleReusableInputChangeFunc("timeSlots", index, event);
+  // };
 
-  const deleteTimeSlot = (e, index) => {
-    e.preventDefault();
-    deleteItem("timeSlots", index);
-  };
+  // const deleteTimeSlot = (e, index) => {
+  //   e.preventDefault();
+  //   deleteItem("timeSlots", index);
+  // };
 
   return (
     <div>
       <h2 className="text-headingColor font-bold text-[24px] leading-9 mb-10">
-        Profile Information
+      Informação do Perfil
       </h2>
 
       <form>
         <div className="mb-5">
-          <p className="form__label">Name*</p>
+          <p className="form__label">Nome*</p>
           <input
             type="text"
             name="name"
             value={formData.name}
             onChange={handleInputChange}
-            placeholder="Full Name"
+            placeholder="Nome Completo"
             className="form__input"
           />
         </div>
@@ -200,7 +200,7 @@ const Profile = ({ doctorData }) => {
           />
         </div>
         <div className="mb-5">
-          <p className="form__label">Phone*</p>
+          <p className="form__label">Telefone*</p>
           <input
             type="number"
             name="phone"
@@ -224,58 +224,46 @@ const Profile = ({ doctorData }) => {
         </div>
 
         <div className="mb-5">
-          <div className="grid grid-cols-3 gap-5 mb-[30px]">
+          <div className="grid grid-cols-2 gap-5 mb-[30px]">
             <div>
-              <p className="form__label">Gender*</p>
+              <p className="form__label">Gênero*</p>
               <select
                 name="gender"
                 value={formData.gender}
                 onChange={handleInputChange}
                 className="form__input py-3.5"
               >
-                <option value="">Select</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
+                <option value="male">Masculino</option>
+                <option value="female">Femenino</option>
               </select>
             </div>
             <div>
-              <p className="form__label">Specialization*</p>
+              <p className="form__label">Especialização*</p>
               <select
                 name="specialization"
                 value={formData.specialization}
                 onChange={handleInputChange}
                 className="form__input py-3.5"
               >
-                <option value="">Select</option>
-                <option value="surgeon">Surgeon</option>
-                <option value="neurologist">Neurologist</option>
-                <option value="dermatologist">Dematologist</option>
+                <option value="surgeon">Assistência Técnica</option>
+                <option value="neurologist">Aulas</option>
+                <option value="dermatologist">Design e Tecnologia</option>
+                <option value="">Eventos</option>
+                <option value="">Reformas</option>
+                <option value="">Serviços Domésticos</option>
               </select>
-            </div>
-
-            <div>
-              <p className="form__label">Ticket Price</p>
-              <input
-                type="number"
-                placeholder="100"
-                name="ticketPrice"
-                value={formData.ticketPrice}
-                className="form__input"
-                onChange={handleInputChange}
-              />
             </div>
           </div>
         </div>
 
         <div className="mb-5">
-          <p className="form__label">Qualifications*</p>
+          <p className="form__label">Qualificações*</p>
           {formData.qualifications?.map((item, index) => (
             <div key={index}>
               <div>
                 <div className="grid grid-cols-2 gap-5">
                   <div>
-                    <p className="form__label">Starting Date*</p>
+                    <p className="form__label">Data de início*</p>
                     <input
                       type="date"
                       name="startingDate"
@@ -285,7 +273,7 @@ const Profile = ({ doctorData }) => {
                     />
                   </div>
                   <div>
-                    <p className="form__label">Ending Date*</p>
+                    <p className="form__label">Data do fim*</p>
                     <input
                       type="date"
                       name="endingDate"
@@ -297,7 +285,7 @@ const Profile = ({ doctorData }) => {
                 </div>
                 <div className="grid grid-cols-2 gap-5 mt-5">
                   <div>
-                    <p className="form__label">Degree*</p>
+                    <p className="form__label">Grau académico*</p>
                     <input
                       type="text"
                       name="degree"
@@ -307,7 +295,7 @@ const Profile = ({ doctorData }) => {
                     />
                   </div>
                   <div>
-                    <p className="form__label">University*</p>
+                    <p className="form__label">Instituição de ensino*</p>
                     <input
                       type="text"
                       name="university"
@@ -331,18 +319,18 @@ const Profile = ({ doctorData }) => {
             className="bg-[#000] py-2 px-5 rounded text-white h-fit cursor-pointer"
             onClick={addQualification}
           >
-            Add Qualification
+            Adicionar Qualificação
           </button>
         </div>
 
         <div className="mb-5">
-          <p className="form__label">Experiences*</p>
+          <p className="form__label">Experiências*</p>
           {formData.experiences?.map((item, index) => (
             <div key={index}>
               <div>
                 <div className="grid grid-cols-2 gap-5">
                   <div>
-                    <p className="form__label">Starting Date*</p>
+                    <p className="form__label">Data de início*</p>
                     <input
                       type="date"
                       name="startingDate"
@@ -352,7 +340,7 @@ const Profile = ({ doctorData }) => {
                     />
                   </div>
                   <div>
-                    <p className="form__label">Ending Date*</p>
+                    <p className="form__label">Data do fim*</p>
                     <input
                       type="date"
                       name="endingDate"
@@ -364,7 +352,7 @@ const Profile = ({ doctorData }) => {
                 </div>
                 <div className="grid grid-cols-2 gap-5 mt-5">
                   <div>
-                    <p className="form__label">Position*</p>
+                    <p className="form__label">Posição*</p>
                     <input
                       type="text"
                       name="position"
@@ -374,7 +362,7 @@ const Profile = ({ doctorData }) => {
                     />
                   </div>
                   <div>
-                    <p className="form__label">Hospital*</p>
+                    <p className="form__label">Empresa*</p>
                     <input
                       type="text"
                       name="hospital"
@@ -398,11 +386,11 @@ const Profile = ({ doctorData }) => {
             onClick={addExperience}
             className="bg-[#000] py-2 px-5 rounded text-white h-fit cursor-pointer"
           >
-            Add Experience
+            Adicionar Experiência
           </button>
         </div>
 
-        <div className="mb-5">
+        {/* <div className="mb-5">
           <p className="form__label">Time Slots*</p>
           {formData.timeSlots?.map((item, index) => (
             <div key={index}>
@@ -464,14 +452,14 @@ const Profile = ({ doctorData }) => {
           >
             Add TimeSlot
           </button>
-        </div>
+        </div> */}
         <div className="mb-5">
-          <p className="form__label">About*</p>
+          <p className="form__label">Acerca*</p>
           <textarea
             name="about"
             rows={5}
             value={formData.about}
-            placeholder="Write about you"
+            placeholder="Escreva sobre você"
             onChange={handleInputChange}
             className="form__input"
           ></textarea>
@@ -507,7 +495,7 @@ const Profile = ({ doctorData }) => {
             text-[15px] leading-6 overflow-hidden bg-[#0066ff46] text-headingColor font-semibold
             rounded-lg truncate cursor-pointer"
             >
-              Upload Photo
+              Carregar foto
             </label>
           </div>
         </div>
@@ -518,7 +506,7 @@ const Profile = ({ doctorData }) => {
             onClick={updateProfileHandler}
             className="bg-primaryColor text-white text-[18px] leading-[30px] w-full py-3 px-4 rounded-lg"
           >
-            Update Profile
+            Atualizar perfil
           </button>
         </div>
       </form>
