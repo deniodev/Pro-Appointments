@@ -1,7 +1,6 @@
 import {useContext, useState} from 'react';
 import {authContext} from './../../context/AuthContext';
 import Profile from './Profile';
-import MyBookings from './MyBookings';
 import useGetProfile from '../../hooks/useFetchData';
 import { BASE_URL } from '../../config';
 import Loading from '../../components/Loader/Loading';
@@ -44,7 +43,7 @@ const MyAccount = () => {
                         {userData.email}
                     </p>
                     <p className="text-textColor text-[15px] leading-6 font-medium">
-                        Bood Type:{" "}
+                        Telefone:{" "}
                         <span className="ml-2 text-headingColor text-[22px] leading-8">
                            {userData.bloodType}
                         </span>
@@ -56,7 +55,7 @@ const MyAccount = () => {
                         Logout
                     </button>
                     <button className='w-full bg-red-600 mt-4 p-3 text-[16px] leading-7 rounded-md text-white'>
-                        Delete account
+                        Apagar a conta
                     </button>
                 </div>
             </div>
@@ -64,23 +63,12 @@ const MyAccount = () => {
             <div className="md:col-span-2 md:px-[30px]">
               <div>
                 <button 
-                onClick={()=> setTab('bookings')} 
-                className={`${tab === 'bookings' && 'bg-primaryColor text-white font-normal'} p-2 mr-5 px-5 rounded-md text-headingColor 
-                font-semibold text-[16px] leading-7 border border-solid border-primaryColor`}>
-                    My Bookings
-                </button>
-
-                <button 
                 onClick={()=> setTab('settings')} 
                 className={`${tab === 'settings' && 'bg-primaryColor text-white font-normal'} py-2 px-5 rounded-md text-headingColor 
                 font-semibold text-[16px] leading-7 border border-solid border-primaryColor`}>
-                    Profile Settings
+                    Configurações
                 </button>
                 </div>
-
-                {
-                    tab === 'bookings' && <MyBookings/>
-                }
                 {
                     tab === 'settings' && <Profile user={userData}/>
                 }

@@ -77,7 +77,7 @@ const Profile = ({user}) => {
           <div className="mb-5">
             <input 
             type="text"
-            placeholder="Full Name"
+            placeholder="Nome Completo"
             name="name"
             value={formData.name}
             onChange={handleInputChange}
@@ -91,7 +91,7 @@ const Profile = ({user}) => {
           <div className="mb-5">
             <input 
             type="email"
-            placeholder="Enter Your Email"
+            placeholder="Seu Email"
             name="email"
             value={formData.email}
             onChange={handleInputChange}
@@ -119,7 +119,7 @@ const Profile = ({user}) => {
           <div className="mb-5">
             <input 
             type="text"
-            placeholder="Blood Type"
+            placeholder="Telefone"
             name="bloodType"
             value={formData.bloodType}
             onChange={handleInputChange}
@@ -133,16 +133,14 @@ const Profile = ({user}) => {
           <div className="mb-5 flex items-center justify-between">         
     
             <label className='text-headingColor font-bold text-[16px] leading-7'>
-              Gender:
+            Gênero:
               <select
                name="gender"
                value={formData.gender}
                onChange={handleInputChange}
                className='text-textColor font-semibold text-[15px] leading-7 px-4 py-3 focus:outline-none'>
-                <option value="">Select</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
+                <option value="male">Masculino</option>
+                <option value="female">Femenino</option>
               </select>
             </label>
             </div> 
@@ -174,7 +172,7 @@ const Profile = ({user}) => {
             text-[15px] leading-6 overflow-hidden bg-[#0066ff46] text-headingColor font-semibold
             rounded-lg truncate cursor-pointer'
             >
-              {selectedFile ? selectedFile.name : "Upload Photo"}
+              {selectedFile ? selectedFile.name : "Carregar foto"}
             </label>
           </div> 
           </div>  
@@ -185,7 +183,7 @@ const Profile = ({user}) => {
             type="submit"
             className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3"
             >
-              { loading ? <HashLoader size={25} color="#ffffff"/> : 'Update'}
+              { loading ? <HashLoader size={25} color="#ffffff"/> : 'Atualizar'}
             </button>
           </div>
           </form>
