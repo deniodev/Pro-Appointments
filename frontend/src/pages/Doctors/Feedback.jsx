@@ -11,7 +11,7 @@ const Feedback = ({reviews, totalRating}) => {
     <div>
     <div className='mb-[50px]'>
         <h4 className="text-[20px] leading-[30px] font-bold text-headingColor mb-[30px]">
-            All reviews ({totalRating})
+        Todas as avaliações ({totalRating})
         </h4>
 
        {reviews?.map((review, index) => (
@@ -48,7 +48,7 @@ const Feedback = ({reviews, totalRating}) => {
         {!showFeedbackForm && (
         <div className="text-center">
             <button className='btn' onClick={()=>setShowFeedbackForm(true)}>
-                Give Feedback
+            Dê o seu Feedback
             </button>
         </div>
         )}
