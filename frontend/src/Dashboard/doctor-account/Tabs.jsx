@@ -28,16 +28,7 @@ const Tabs = ({tab, setTab}) => {
                 ? "bg-indigo-100 text-primaryColor"
                 : "bg-transparent text-headingColor"
             } w-full btn mt-0 rounded-md`}>
-                Overview
-            </button>
-
-            <button onClick={()=>setTab('appointments')}
-            className={`${
-                tab === "appointments" 
-                ? "bg-indigo-100 text-primaryColor"
-                : "bg-transparent text-headingColor"
-            } w-full btn mt-0 rounded-md`}>
-                Appointments
+                Visão geral
             </button>
 
             <button onClick={()=>setTab('settings')}
@@ -46,17 +37,17 @@ const Tabs = ({tab, setTab}) => {
                 ? "bg-indigo-100 text-primaryColor"
                 : "bg-transparent text-headingColor"
             } w-full btn mt-0 rounded-md`}>
-                Profile
+                Perfil
             </button>
 
             <div className="mt-[100px] w-full">
                     <button onClick={handleLogout} 
                     className='w-full bg-[#181A1E] p-3 text-[16px] leading-7 rounded-md text-white'>
-                        Logout
+                        Sair
                     </button>
                     <button 
                     className='w-full bg-red-600 mt-4 p-3 text-[16px] leading-7 rounded-md text-white'>
-                        Delete account
+                        Apagar a conta
                     </button>
                 </div>
         </div>
