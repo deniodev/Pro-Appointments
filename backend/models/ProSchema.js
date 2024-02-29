@@ -1,17 +1,16 @@
 import mongoose from "mongoose";
 
-const DoctorSchema = new mongoose.Schema({
+const ProSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   name: { type: String, required: true },
   phone: { type: Number },
   photo: { type: String },
-  ticketPrice: { type: Number },
   role: {
     type: String,
   },
 
-  // Fields for doctors only
+  // Fields for pro only
   specialization: { type: String },
   qualifications: {
     type: Array,
@@ -36,9 +35,8 @@ const DoctorSchema = new mongoose.Schema({
   isApproved: {
     type: String,
     enum: ["pending", "approved", "cancelled"],
-    default: "pending",
+    default: "approved",
   },
-  appointments: [{ type: mongoose.Types.ObjectId, ref: "Appointment" }],
 });
 
-export default mongoose.model("Doctor", DoctorSchema);
+export default mongoose.model("Pro", ProSchema);

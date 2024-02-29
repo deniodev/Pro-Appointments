@@ -1,7 +1,6 @@
 import jwt from 'jsonwebtoken';
 import User from '../models/UserSchema.js';
-import Doctor from '../models/DoctorSchema.js';
-
+import Pro from '../models/ProSchema.js';
 
 
 
@@ -41,14 +40,14 @@ export const restrict = roles=> async(req,res,next)=>{
 
     let user;
 
-    const patient = await User.findById(userId)
-    const doctor = await Doctor.findById(userId)
+    const client = await User.findById(userId)
+    const pro = await Pro.findById(userId)
 
-    if(patient){
-        user = patient
+    if(client){
+        user = client
     }
-    if(doctor){
-        user = doctor
+    if(pro){
+        user = pro
     }
 
     if(!roles.includes(user.role)){

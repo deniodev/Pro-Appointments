@@ -1,11 +1,10 @@
-import Doctor from"../models/DoctorSchema.js";
-import BookingSchema from "../models/BookingSchema.js";
+import Pro from "../models/ProSchema.js";
 
-export const updateDoctor = async(req,res)=>{
+export const updatePro = async(req,res)=>{
     const id = req.params.id;
 
     try {
-        const updatedDoctor= await Doctor.findByIdAndUpdate(
+        const updatedPro= await Pro.findByIdAndUpdate(
             id, 
             {$set:req.body}, 
             {new:true}
@@ -16,18 +15,18 @@ export const updateDoctor = async(req,res)=>{
         .json({
             success:true, 
             message:'Sucessfully updated', 
-            data:updatedDoctor,
+            data:updatedPro,
         });
     } catch (err) {
         res.status(500).json({ success:false, message:'Failed to update'})
     }
 };
 
-export const deleteDoctor = async (req, res)=>{
+export const deletePro = async (req, res)=>{
     const id = req.params.id;
 
     try {
-        await Doctor.findByIdAndDelete(id);
+        await Pro.findByIdAndDelete(id);
 
         res
         .status(200)
@@ -40,11 +39,11 @@ export const deleteDoctor = async (req, res)=>{
     }
 };
 
-export const getSingleDoctor = async(req,res)=>{
+export const getSinglePro = async(req,res)=>{
     const id = req.params.id;
 
     try {
-        const doctor = await Doctor.findById(id)
+        const pro = await Pro.findById(id)
         .populate("reviews")
         .select("-password");
 
@@ -53,22 +52,22 @@ export const getSingleDoctor = async(req,res)=>{
         .json({
             success:true, 
             message:'User Found', 
-            data:doctor,
+            data:pro,
         });
     } catch (err) {
         res.status(404).json({ success:false, message:'No user found'})
     }
 };
 
-export const getAllDoctor = async(req,res)=>{
+export const getAllPro = async(req,res)=>{
 
     try {
 
         const {query} = req.query;
-        let doctors;
+        let pros;
 
         if(query){
-            doctors = await Doctor.find({
+            pros = await Pro.find({
                 isApproved:'approved',
                 $or:[
                     {name:{$regex: query, $options: "i" }},
@@ -76,35 +75,34 @@ export const getAllDoctor = async(req,res)=>{
             }).select("-password");
         } else {
 
-            doctors = await Doctor.find({isApproved:'approved'}).select("-password");
+            pros = await Pro.find({isApproved:'approved'}).select("-password");
         }
 
         res
         .status(200)
         .json({
             success:true, 
-            message:'Doctors Found', 
-            data: doctors,
+            message:'Pros Found', 
+            data: pros,
         });
     } catch (err) {
         res.status(404).json({ success:false, message:'Not found'})
     }
 };
 
-export const getDoctorProfile = async(req,res)=>{
-    const doctorId = req.userId
+export const getProProfile = async(req,res)=>{
+    const proId = req.userId
 
     try {
-        const doctor = await Doctor.findById(doctorId);
+        const pro = await Pro.findById(proId);
 
-        if(!doctor){
-            return res.status(404).json({success:false, message:'Doctor not found'})
+        if(!pro){
+            return res.status(404).json({success:false, message:'Pro not found'})
         }
 
-        const {password, ...rest} = doctor._doc;
-        const appointments = await BookingSchema.find({doctor:doctorId});
+        const {password, ...rest} = pro._doc;
 
-        res.status(200).json({success:true, message:'Profile info is getting', data:{...rest, appointments}})
+        res.status(200).json({success:true, message:'Profile info is getting', data:{...rest}})
 
     } catch (err) {
         res.status(500).json({ success:false, message:'Something went wrong, cannot get'});

@@ -8,6 +8,6 @@ const router = express.Router({ mergeParams:true });
 router
 .route('/')
 .get(getAllReviews)
-.post(authenticate,restrict(['patient']), createReview);
+.post(authenticate,restrict(['client']), createReview);
 
 export default router;
