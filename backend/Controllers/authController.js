@@ -1,5 +1,5 @@
 import User from '../models/UserSchema.js';
-import Doctor from '../models/DoctorSchema.js';
+import Pro from '../models/ProSchema.js';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 
@@ -17,11 +17,11 @@ export const register = async(req,res)=>{
 
         let user = null;
 
-        if(role==='patient') {
+        if(role==='client') {
             user = await User.findOne({email})
         }
-        else if(role==='doctor'){
-            user = await Doctor.findOne({email})
+        else if(role==='pro'){
+            user = await Pro.findOne({email})
         }
 
         // check if user exists
@@ -33,7 +33,7 @@ export const register = async(req,res)=>{
         const salt = await bcrypt.genSalt(10);
         const hashPassword = await bcrypt.hash(password, salt)
 
-        if(role==='patient'){
+        if(role==='client'){
             user = new User({
                 name,
                 email,
@@ -44,8 +44,8 @@ export const register = async(req,res)=>{
             })
         }
 
-        if(role==='doctor'){
-            user = new Doctor({
+        if(role==='pro'){
+            user = new Pro({
                 name,
                 email,
                 password:hashPassword,
@@ -72,14 +72,14 @@ export const login = async(req,res)=>{
 
         let user = null;
 
-        const patient =  await User.findOne({email});
-        const doctor = await Doctor.findOne({email});
+        const client =  await User.findOne({email});
+        const pro = await Pro.findOne({email});
 
-        if(patient){
-            user = patient
+        if(client){
+            user = client
         }
-        if(doctor){
-            user = doctor
+        if(pro){
+            user = pro
         }
 
         // check if user exists or not
@@ -99,7 +99,7 @@ export const login = async(req,res)=>{
         // get token
         const token = generateToken(user);
 
-        const {password, role, appointments, ...rest} = user._doc
+        const {password, role, ...rest} = user._doc
 
         res.status(200).json({ status:true, message: "Successfuly login", token, data:{...rest}, role });
 
