@@ -16,14 +16,14 @@ const Profile = ({user}) => {
     password:'',
     photo: null,
     gender:'',
-    bloodType: '',
+    phone: '',
   });
 
   const navigate = useNavigate();
 
   useEffect(()=>{
     setFormData({ name:user.name, email:user.email, 
-      photo:user.photo, gender:user.gender, bloodType:user.bloodType });
+      photo:user.photo, gender:user.gender, phone:user.phone });
   },[user])
 
   const handleInputChange = (e) => {
@@ -120,8 +120,8 @@ const Profile = ({user}) => {
             <input 
             type="text"
             placeholder="Telefone"
-            name="bloodType"
-            value={formData.bloodType}
+            name="phone"
+            value={formData.phone}
             onChange={handleInputChange}
             className="w-full pr-4 py-3 border-b border-solid border-[#0066ff61] 
             focus:outline-none focus:border-b-primaryColor text-[16px] leading-7
