@@ -10,7 +10,7 @@ const navLinks = [
     display: 'Home'
   },
   {
-    path: '/doctors',
+    path: '/pros',
     display: 'Pesquisar'
   },
   {
@@ -84,8 +84,8 @@ const Header = () => {
         <div>
           <Link
            to={`${
-            role==='doctor'
-             ? '/doctors/profile/me' 
+            role==='pro'
+             ? '/pros/profile/me' 
              : '/users/profile/me'
              }`}
              >

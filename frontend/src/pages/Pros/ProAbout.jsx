@@ -1,6 +1,6 @@
 import { formateDate } from '../../utils/formateDate';
 
-const DoctorAbout = ({name, about, qualifications, experiences}) => {
+const ProAbout = ({name, about, qualifications, experiences}) => {
   return (
     <div>
         <div>
@@ -71,4 +71,4 @@ const DoctorAbout = ({name, about, qualifications, experiences}) => {
   )
 }
 
-export default DoctorAbout
+export default ProAbout

@@ -5,13 +5,12 @@ import  useGetProfile  from '../../hooks/useFetchData';
 import { BASE_URL } from '../../config';
 import Tabs from './Tabs';
 import starIcon from '../../assets/images/Star.png';
-import DoctorAbout from '../../pages/Doctors/DoctorAbout';
+import ProAbout from '../../pages/Pros/ProAbout';
 import Profile from './Profile';
-import Appointments from './Appointments';
 
 const Dashboard = () => {
 
-  const {data, loading, error} = useGetProfile(`${BASE_URL}/doctors/profile/me`);
+  const {data, loading, error} = useGetProfile(`${BASE_URL}/pros/profile/me`);
 
   const [tab,setTab] = useState('overview');
 
@@ -84,7 +83,7 @@ const Dashboard = () => {
                             </p>
                           </div>
                       </div>
-                      <DoctorAbout 
+                      <ProAbout 
                       name={data.name}
                       about={data.about}
                       qualifications={data.qualifications}
@@ -93,8 +92,7 @@ const Dashboard = () => {
                     </div>}
 
 
-                  {tab === 'appointments'  && <Appointments appointments={data.appointments}/>}
-                  {tab === 'settings'  && <Profile doctorData={data}/>}
+                  {tab === 'settings'  && <Profile proData={data}/>}
                 </div>
 
             </div>

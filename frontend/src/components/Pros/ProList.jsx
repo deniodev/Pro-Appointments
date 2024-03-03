@@ -1,14 +1,12 @@
-
-import DoctorCard from './DoctorCard';
-
+import ProCard from './ProCard';
 import { BASE_URL } from '../../config';
 import useFetchData from '../../hooks/useFetchData';
-import Error from '../../components/Error/Error';
+import Error from '../Error/Error';
 import Loader from '../Loader/Loading';
 
-const DoctorList = () => {
+const ProList = () => {
 
-  const { data:doctors, loading, error } = useFetchData(`${BASE_URL}/doctors`)
+  const { data:pros, loading, error } = useFetchData(`${BASE_URL}/pros`)
 
   return ( 
   <>
@@ -17,8 +15,8 @@ const DoctorList = () => {
   
 
     { !loading && !error && <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 lg:gap-[30px] mt-[30px] lg:mt-[55px]'>
-        {doctors.map((doctor)=> (
-             <DoctorCard key={doctor._id} doctor={doctor}/>
+        {pros.map((pro)=> (
+             <ProCard key={pro._id} pro={pro}/>
         ))}
     </div>}
 
@@ -26,4 +24,4 @@ const DoctorList = () => {
   )
 }
 
-export default DoctorList
+export default ProList

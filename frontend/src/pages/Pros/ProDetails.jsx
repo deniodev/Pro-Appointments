@@ -1,21 +1,21 @@
 import { useState } from 'react';
 import starIcon from '../../assets/images/Star.png';
-import DoctorAbout from './DoctorAbout';
+import ProAbout from './ProAbout';
 import Feedback from './Feedback';
-import SidePanel from './SidePanel';
+// import SidePanel from './SidePanel';
 import { BASE_URL } from '../../config';
 import useFetchData from '../../hooks/useFetchData';
 import Error from '../../components/Error/Error';
 import Loader from '../../components/Loader/Loading';
 import { useParams } from 'react-router-dom';
 
-const DoctorDetails = () => {
+const ProDetails = () => {
 
   const [tab,setTab] = useState('about');
 
   const {id} = useParams()
 
-  const { data:doctor, loading, error } = useFetchData(`${BASE_URL}/doctors/${id}`);
+  const { data:pro, loading, error } = useFetchData(`${BASE_URL}/pros/${id}`);
 
   const {
     name,
@@ -27,10 +27,8 @@ const DoctorDetails = () => {
     averageRating, 
     totalRating,
     specialization,
-    ticketPrice,
     photo,
-    timeSlots,
-  } = doctor;
+  } = pro;
 
   return (
     <section>
@@ -57,7 +55,7 @@ const DoctorDetails = () => {
                 <div className="flex items-center gap-[6px]">
                   <span className='flex items-center gap-[6px] text-[14px] leading-5 lg:text-[16px]
                   lg:leading-7 font-semibold text-headingColor'>
-                    <img src={starIcon} alt="" />{averageRating}
+                    <img src={starIcon} alt="" />({averageRating})
                   </span>
                   <span className='text-[14px] leading-5 lg:text-[16px]
                   lg:leading-7 font-[400] text-textColor'>
@@ -89,7 +87,7 @@ const DoctorDetails = () => {
               </div>
 
               <div className="mt-[50px]">
-                {tab==='about' && <DoctorAbout 
+                {tab==='about' && <ProAbout 
                 name={name} 
                 about={about} 
                 qualifications={qualifications} 
@@ -101,12 +99,10 @@ const DoctorDetails = () => {
               </div>
           </div>
 
-          <div>
+          {/* <div>
             <SidePanel 
-            doctorId={doctor._id}
-            ticketPrice= {ticketPrice}
-            timeSlots={timeSlots}/>
-          </div>
+            proId={pro._id}/>
+          </div> */}
         </div>
         )}
       </div>
@@ -114,4 +110,4 @@ const DoctorDetails = () => {
   )
 }
 
-export default DoctorDetails
+export default ProDetails

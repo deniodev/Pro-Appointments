@@ -1,11 +1,11 @@
-import DoctorCard from '../../components/Doctors/DoctorCard';
+import ProCard from '../../components/Pros/ProCard';
 import { BASE_URL } from '../../config';
 import useFetchData from '../../hooks/useFetchData';
 import Loader from '../../components/Loader/Loading';
 import Error from '../../components/Error/Error'
 import { useEffect, useState } from 'react';
 
-const Doctors = () => {
+const Pros = () => {
   const [query, setQuery] = useState('');
   const [debounceQuery, setDebounceQuery] = useState("");
 
@@ -25,7 +25,7 @@ const Doctors = () => {
 
   },[query])
 
-  const { data: doctors, loading, error } = useFetchData(`${BASE_URL}/doctors?query=${debounceQuery}`)
+  const { data: pros, loading, error } = useFetchData(`${BASE_URL}/pros?query=${debounceQuery}`)
   return (
   <>
   <section className='bg-[#fff9ea]'>
@@ -53,8 +53,8 @@ const Doctors = () => {
     {error && <Error/>}
       {!loading && !error && (
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5'>
-        {doctors.map((doctor)=> (
-             <DoctorCard key={doctor.id} doctor={doctor}/>
+        {pros.map((pro)=> (
+             <ProCard key={pro.id} pro={pro}/>
         ))}
       </div>
       )}
@@ -63,4 +63,4 @@ const Doctors = () => {
   </>
 )}
 
-export default Doctors
+export default Pros
