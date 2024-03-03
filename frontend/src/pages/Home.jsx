@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 import { BsArrowRight } from 'react-icons/bs';
 import About from '../components/About/About';
 import ServiceList from '../components/Services/ServiceList';
-import DoctorList from '../components/Doctors/DoctorList';
+import ProList from '../components/Pros/ProList';
 import FaqList from '../components/Faq/FaqList';
 
 const Home = () => { 
@@ -80,7 +80,7 @@ const Home = () => {
           encontre o profissional perfeito para si.
           </p>
 
-          <Link to="/doctors"
+          <Link to="/pros"
            className='w-[44px] h-[44px] rounded-full border border-solid 
           border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor 
           hover:border-none'>
@@ -105,7 +105,7 @@ const Home = () => {
           Localize profissionais próximos a você ou em uma região específica para atender às suas necessidades.
           </p>
 
-          <Link to="/doctors"
+          <Link to="/pros"
            className='w-[44px] h-[44px] rounded-full border border-solid 
           border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor 
           hover:border-none'>
@@ -130,7 +130,7 @@ const Home = () => {
           Agende facilmente uma reunião com o profissional escolhido através da nossa plataforma integrada. 
           </p>
 
-          <Link to="/doctors"
+          <Link to="/pros"
            className='w-[44px] h-[44px] rounded-full border border-solid 
           border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor 
           hover:border-none'>
@@ -160,17 +160,17 @@ const Home = () => {
   {/* ============== services section end ============ */}
 
 
-   {/* ============= doctors section================ */}
+   {/* ============= pros section================ */}
     <section>
       <div className="container">
       <div className="xl:w-[470px] mx-auto">
         <h2 className='heading text-center'>Os nossos profissionais</h2>
       </div>
 
-      <DoctorList />
+      <ProList />
       </div>
     </section>
-   {/* ============= doctors section end ================ */}
+   {/* ============= pros section end ================ */}
 
    {/* ============= faq section ================ */}
    <section>
