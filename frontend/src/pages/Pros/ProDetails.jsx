@@ -2,7 +2,7 @@ import { useState } from 'react';
 import starIcon from '../../assets/images/Star.png';
 import ProAbout from './ProAbout';
 import Feedback from './Feedback';
-// import SidePanel from './SidePanel';
+import SidePanel from './SidePanel';
 import { BASE_URL } from '../../config';
 import useFetchData from '../../hooks/useFetchData';
 import Error from '../../components/Error/Error';
@@ -28,6 +28,7 @@ const ProDetails = () => {
     totalRating,
     specialization,
     photo,
+    phone,
   } = pro;
 
   return (
@@ -99,10 +100,11 @@ const ProDetails = () => {
               </div>
           </div>
 
-          {/* <div>
+          <div>
             <SidePanel 
-            proId={pro._id}/>
-          </div> */}
+            proId={pro._id}
+            phone={phone}/>
+          </div>
         </div>
         )}
       </div>

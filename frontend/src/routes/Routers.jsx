@@ -17,7 +17,7 @@ const Routers = () => {
     <Route path='/' element={<Home />} />
     <Route path='/home' element={<Home />} />
     <Route path='/pros' element={<Pros />} />
-    <Route path='/pros/:id' element={<ProDetails />} />
+    <Route path='/pros/:id' element={<ProtectedRoute allowedRoles={['client','pro']}><ProDetails /></ProtectedRoute>} />
     <Route path='/login' element={<Login />} />
     <Route path='/register' element={<Signup />} />
     <Route path='/contact' element={<Contact />} />
