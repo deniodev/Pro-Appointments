@@ -8,6 +8,7 @@ import useFetchData from '../../hooks/useFetchData';
 import Error from '../../components/Error/Error';
 import Loader from '../../components/Loader/Loading';
 import { useParams } from 'react-router-dom';
+import Portfolio from './Portfolio';
 
 const ProDetails = () => {
 
@@ -75,8 +76,15 @@ const ProDetails = () => {
                 <button 
                 onClick={()=> setTab('about')}
                 className={`${tab==='about' && 'border-b border-solid border-primaryColor'} 
-                py-2 px-5 mr-5 text-[16px] leading-7 text-headingColor font-semibold`}>
+                py-2 px-3 mr-5 text-[16px] leading-7 text-headingColor font-semibold`}>
                   Sobre
+                </button>
+
+                <button 
+                onClick={()=> setTab('portfolio')}
+                className={`${tab==='portfolio' && 'border-b border-solid border-primaryColor'} 
+                py-2 px-5 mr-5 text-[16px] leading-7 text-headingColor font-semibold`}>
+                  Portfolio
                 </button>
 
                 <button 
@@ -85,6 +93,8 @@ const ProDetails = () => {
                 py-2 px-5 mr-5 text-[16px] leading-7 text-headingColor font-semibold`}>
                   Feedback
                 </button>
+
+             
               </div>
 
               <div className="mt-[50px]">
@@ -93,10 +103,13 @@ const ProDetails = () => {
                 about={about} 
                 qualifications={qualifications} 
                 experiences={experiences}/>}
+                 {tab==='portfolio' && <Portfolio
+                 />}
                 {tab==='feedback' && <Feedback
                  reviews={reviews} 
                  totalRating={totalRating}
                  />}
+                
               </div>
           </div>
 
