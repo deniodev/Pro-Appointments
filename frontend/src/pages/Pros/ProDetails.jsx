@@ -76,7 +76,7 @@ const ProDetails = () => {
                 <button 
                 onClick={()=> setTab('about')}
                 className={`${tab==='about' && 'border-b border-solid border-primaryColor'} 
-                py-2 px-5 mr-5 text-[16px] leading-7 text-headingColor font-semibold`}>
+                py-2 px-3 mr-5 text-[16px] leading-7 text-headingColor font-semibold`}>
                   Sobre
                 </button>
 
