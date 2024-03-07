@@ -12,6 +12,7 @@ import About from '../components/About/About';
 import ServiceList from '../components/Services/ServiceList';
 import ProList from '../components/Pros/ProList';
 import FaqList from '../components/Faq/FaqList';
+import Pros from './Pros/Pros';
 
 const Home = () => { 
   return  <> 
@@ -31,7 +32,7 @@ const Home = () => {
               Simplifique sua busca e comece a trabalhar hoje mesmo!
             </p>
 
-            <button className='btn'>Agende um encontro</button>
+            {/* <button className='btn'>Agende um encontro</button> */}
           </div>
     </div>
         {/* ========= hero content ============ */}
@@ -50,7 +51,7 @@ const Home = () => {
   </section>
   {/* ============= hero section end =========== */}
 
-  <section>
+  {/* <section>
     <div className="container">
       <div className='lg:w-[470px] mx-auto'>
         <h2 className='heading text-center'>
@@ -141,12 +142,12 @@ const Home = () => {
 
       </div>
     </div>
-  </section>
+  </section> */}
   
-  <About />
+  {/* <About /> */}
 
   {/* ============== services section ============ */}
-  <section>
+  {/* <section>
     <div className="container">
       <div className="xl:w-[470px] mx-auto">
         <h2 className='heading text-center'>Nossos serviços</h2>
@@ -156,7 +157,7 @@ const Home = () => {
 
       <ServiceList/>
     </div>
-  </section>
+  </section> */}
   {/* ============== services section end ============ */}
 
 
@@ -167,7 +168,7 @@ const Home = () => {
         <h2 className='heading text-center'>Os nossos profissionais</h2>
       </div>
 
-      <ProList />
+      <Pros />
       </div>
     </section>
    {/* ============= pros section end ================ */}
