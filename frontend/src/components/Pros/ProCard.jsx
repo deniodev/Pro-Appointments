@@ -5,7 +5,7 @@ import { BsArrowRight } from 'react-icons/bs';
 
 const ProCard = ({pro}) => {
 
-    const {name, avgRating, totalRating, photo, specialization, experiences} = pro
+    const {name, avgRating, totalRating, photo, specialization, city} = pro
 
   return (
     <div className='p-3 lg:p-5'>
@@ -34,6 +34,10 @@ const ProCard = ({pro}) => {
                 </span>
             </div>
         </div>
+
+        <p className='text__para text-[14px] leading-6 md:text-[15px] lg:max-w-[390px] font-bold'>
+                  📍 {city}
+        </p>
 
 
         <div className="mt-[18px] lg:mt-5 flex items-center justify-between">

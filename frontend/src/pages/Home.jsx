@@ -2,16 +2,9 @@ import React from 'react';
 import heroImg01 from '../assets/images/hero-img01.jpg';
 import heroImg02 from '../assets/images/hero-img02.jpg';
 import heroImg03 from '../assets/images/hero-img03.jpg';
-import icon01 from '../assets/images/icon01.png';
-import icon02 from '../assets/images/icon02.png';
-import icon03 from '../assets/images/icon03.png';
 import faqImg from '../assets/images/faq-img.jpg';
-import { Link } from 'react-router-dom';
-import { BsArrowRight } from 'react-icons/bs';
-import About from '../components/About/About';
-import ServiceList from '../components/Services/ServiceList';
-import ProList from '../components/Pros/ProList';
 import FaqList from '../components/Faq/FaqList';
+import Pros from './Pros/Pros';
 
 const Home = () => { 
   return  <> 
@@ -30,8 +23,6 @@ const Home = () => {
               Conectamos você com os profissionais certos para cada necessidade. 
               Simplifique sua busca e comece a trabalhar hoje mesmo!
             </p>
-
-            <button className='btn'>Agende um encontro</button>
           </div>
     </div>
         {/* ========= hero content ============ */}
@@ -50,115 +41,6 @@ const Home = () => {
   </section>
   {/* ============= hero section end =========== */}
 
-  <section>
-    <div className="container">
-      <div className='lg:w-[470px] mx-auto'>
-        <h2 className='heading text-center'>
-        Providenciando os melhores serviços
-        </h2>
-        <p className='text__para text-center'>
-        Encontre especialistas em todas as áreas e comece a colaborar hoje mesmo para alcançar o sucesso.
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-[30px] mt-[30px] lg:mt-[55px]">
-
-      <div className="py-[30px] px-5">
-        <div className='flex items-center justify-center'>
-          <img 
-            src={icon01}
-            alt=''
-          />
-        </div>
-
-        <div className="mt-[30px]">
-          <h2 className='text-[26px] leading-9 text-headingColor font-[700] text-center'>
-            Encontre o Profissional
-          </h2>
-          <p className='text-[16px] leading-7 text-textColor font-[400] mt-4 text-center'>
-          Explore perfis detalhados, avaliações de clientes e 
-          encontre o profissional perfeito para si.
-          </p>
-
-          <Link to="/pros"
-           className='w-[44px] h-[44px] rounded-full border border-solid 
-          border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor 
-          hover:border-none'>
-            <BsArrowRight className='group-hover:text-white w-6 h-5'/>
-          </Link>
-        </div>
-      </div>
-
-      <div className="py-[30px] px-5">
-        <div className='flex items-center justify-center'>
-          <img 
-            src={icon02}
-            alt=''
-          />
-        </div>
-
-        <div className="mt-[30px]">
-          <h2 className='text-[26px] leading-9 text-headingColor font-[700] text-center'>
-          Encontre a Localização
-          </h2>
-          <p className='text-[16px] leading-7 text-textColor font-[400] mt-4 text-center'>
-          Localize profissionais próximos a você ou em uma região específica para atender às suas necessidades.
-          </p>
-
-          <Link to="/pros"
-           className='w-[44px] h-[44px] rounded-full border border-solid 
-          border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor 
-          hover:border-none'>
-            <BsArrowRight className='group-hover:text-white w-6 h-5'/>
-          </Link>
-        </div>
-      </div>
-
-      <div className="py-[30px] px-5">
-        <div className='flex items-center justify-center'>
-          <img 
-            src={icon03}
-            alt=''
-          />
-        </div>
-
-        <div className="mt-[30px]">
-          <h2 className='text-[26px] leading-9 text-headingColor font-[700] text-center'>
-            Agende um Encontro
-          </h2>
-          <p className='text-[16px] leading-7 text-textColor font-[400] mt-4 text-center'>
-          Agende facilmente uma reunião com o profissional escolhido através da nossa plataforma integrada. 
-          </p>
-
-          <Link to="/pros"
-           className='w-[44px] h-[44px] rounded-full border border-solid 
-          border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor 
-          hover:border-none'>
-            <BsArrowRight className='group-hover:text-white w-6 h-5'/>
-          </Link>
-        </div>
-      </div>
-
-      </div>
-    </div>
-  </section>
-  
-  <About />
-
-  {/* ============== services section ============ */}
-  <section>
-    <div className="container">
-      <div className="xl:w-[470px] mx-auto">
-        <h2 className='heading text-center'>Nossos serviços</h2>
-        <p className='text__para text-center'>Desde assistência técnica
-         e aulas até design e tecnologia, eventos, reformas e serviços domésticos.</p>
-      </div>
-
-      <ServiceList/>
-    </div>
-  </section>
-  {/* ============== services section end ============ */}
-
 
    {/* ============= pros section================ */}
     <section>
@@ -166,8 +48,7 @@ const Home = () => {
       <div className="xl:w-[470px] mx-auto">
         <h2 className='heading text-center'>Os nossos profissionais</h2>
       </div>
-
-      <ProList />
+      <Pros />
       </div>
     </section>
    {/* ============= pros section end ================ */}

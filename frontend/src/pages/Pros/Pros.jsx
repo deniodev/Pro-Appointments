@@ -28,9 +28,8 @@ const Pros = () => {
   const { data: pros, loading, error } = useFetchData(`${BASE_URL}/pros?query=${debounceQuery}`)
   return (
   <>
-  <section className='bg-[#fff9ea]'>
+
     <div className="container text-center">
-        <h2 className="heading">Pesquisar</h2>
         <div className="max-w-[570px] mt-[30px] mx-auto bg-[#0066ff2c] rounded-md flex items-center justify-between">
             <input 
             type="search"
@@ -44,7 +43,7 @@ const Pros = () => {
             </button>
         </div>
     </div>
-  </section>
+
 
   <section>
     <div className="container">

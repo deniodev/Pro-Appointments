@@ -18,6 +18,7 @@ const Profile = ({ proData }) => {
     experiences: [],
     about: "",
     photo: null,
+    city: ""
   });
 
   useEffect(()=> {
@@ -32,6 +33,7 @@ const Profile = ({ proData }) => {
       experiences: proData?.experiences,
       about: proData?.about,
       photo: proData?.photo,
+      city: proData?.city,
     });
   },[proData]);
 
@@ -185,6 +187,17 @@ const Profile = ({ proData }) => {
             value={formData.phone}
             onChange={handleInputChange}
             placeholder="Phone number"
+            className="form__input"
+          />
+        </div>
+        <div className="mb-5">
+          <p className="form__label">Cidade*</p>
+          <input
+            type="text"
+            name="city"
+            value={formData.city}
+            onChange={handleInputChange}
+            placeholder="Cidade"
             className="form__input"
           />
         </div>
