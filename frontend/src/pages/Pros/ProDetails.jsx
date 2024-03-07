@@ -30,6 +30,8 @@ const ProDetails = () => {
     specialization,
     photo,
     phone,
+    city,
+    portfolio
   } = pro;
 
   return (
@@ -64,9 +66,11 @@ const ProDetails = () => {
                     ({totalRating})
                   </span>
                 </div>
-
                   <p className='text__para text-[14px] leading-6 md:text-[15px] lg:max-w-[390px]'>
                     {bio}
+                  </p>
+                  <p className='text__para text-[14px] leading-6 md:text-[15px] lg:max-w-[390px] font-bold'>
+                  📍 {city}
                   </p>
 
               </div>
@@ -84,7 +88,7 @@ const ProDetails = () => {
                 onClick={()=> setTab('portfolio')}
                 className={`${tab==='portfolio' && 'border-b border-solid border-primaryColor'} 
                 py-2 px-5 mr-5 text-[16px] leading-7 text-headingColor font-semibold`}>
-                  Portfolio
+                  Galeria
                 </button>
 
                 <button 
@@ -104,6 +108,7 @@ const ProDetails = () => {
                 qualifications={qualifications} 
                 experiences={experiences}/>}
                  {tab==='portfolio' && <Portfolio
+                 portfolio={portfolio}
                  />}
                 {tab==='feedback' && <Feedback
                  reviews={reviews} 
