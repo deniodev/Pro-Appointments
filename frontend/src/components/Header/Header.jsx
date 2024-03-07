@@ -10,10 +10,6 @@ const navLinks = [
     display: 'Home'
   },
   {
-    path: '/pros',
-    display: 'Pesquisar'
-  },
-  {
     path: '/services',
     display: 'Serviços'
   },
