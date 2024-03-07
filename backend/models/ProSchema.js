@@ -36,6 +36,12 @@ const ProSchema = new mongoose.Schema({
     enum: ["pending", "approved", "cancelled"],
     default: "approved",
   },
+  portfolio: {
+    type: Array,
+  },
+  city: {
+    type: String,
+  }
 });
 
 export default mongoose.model("Pro", ProSchema);
