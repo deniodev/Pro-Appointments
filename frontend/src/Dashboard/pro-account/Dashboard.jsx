@@ -7,6 +7,7 @@ import Tabs from './Tabs';
 import starIcon from '../../assets/images/Star.png';
 import ProAbout from '../../pages/Pros/ProAbout';
 import Profile from './Profile';
+import Gallery from './gallery';
 
 const Dashboard = () => {
 
@@ -93,6 +94,8 @@ const Dashboard = () => {
 
 
                   {tab === 'settings'  && <Profile proData={data}/>}
+
+                  {tab === 'portfolio'  && <Gallery proData={data}/>}
                 </div>
 
             </div>

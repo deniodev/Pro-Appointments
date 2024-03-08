@@ -36,6 +36,15 @@ const Tabs = ({tab, setTab}) => {
                 Perfil
             </button>
 
+            <button onClick={()=>setTab('portfolio')}
+            className={`${
+                tab === "portfolio" 
+                ? "bg-indigo-100 text-primaryColor"
+                : "bg-transparent text-headingColor"
+            } w-full btn mt-0 rounded-md`}>
+                Galeria
+            </button>
+
             <div className="mt-[50px] w-full">
                     <button onClick={handleLogout} 
                     className='w-full bg-[#181A1E] p-3 text-[16px] leading-7 rounded-md text-white'>
