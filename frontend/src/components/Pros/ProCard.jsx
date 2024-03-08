@@ -8,9 +8,9 @@ const ProCard = ({pro}) => {
     const {name, avgRating, totalRating, photo, specialization, city} = pro
 
   return (
-    <div className='p-3 lg:p-5'>
+    <div className='p-3 lg:p-5 '>
         <div>
-            <img src={photo} className='w-full' alt="" />
+            <img src={photo} className='w-full rounded-lg' alt="" />
         </div>
 
         <h2 className="text-[18px] leading-[30px] le:text-[26px] lg:leading-9 text-headingColor font-[700] mt-3 lg:mt-5">
