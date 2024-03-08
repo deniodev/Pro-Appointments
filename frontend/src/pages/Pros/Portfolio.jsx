@@ -6,7 +6,7 @@ import img3 from '../../assets/images/toyota/img3.jpg'
 const Portfolio = () => {
   return (
     <div>
-       <h3 className="text-[20px] leading-[30px] text-headingColor font-semibold flex items-center gap-2">
+       <h3 className="text-[20px] leading-[30px] text-headingColor font-semibold flex items-center gap-2 mt-5">
                 Trabalhos Recentes
         </h3>
       <div className="image-container mt-[30px]">
