@@ -15,9 +15,9 @@ const Home = () => {
 
         {/* ========= hero content ============ */}
         <div>
-          <div className='lg:w-[570px'>
-            <h1 className="text-[36px] leading-[46px] text-headingColor font-[800] md:text-[60px] md:leading-[70px]">
-            Conectando você com os melhores profissionais em todas as áreas.
+          <div className='lg:w-[570px] '>            
+            <h1 className="text-[36px] leading-[46px] text-headingColor font-[700] md:text-[60px] md:leading-[70px]">
+            Conectando você com os melhores profissionais.
             </h1>
             <p className='text__para'>
               Conectamos você com os profissionais certos para cada necessidade. 
@@ -27,7 +27,7 @@ const Home = () => {
     </div>
         {/* ========= hero content ============ */}
 
-      <div className="flex gap-[30px] justify-end">
+      {/* <div className="flex gap-[30px] justify-end">
         <div>
           <img className="w-full" src={heroImg01} alt="" />
         </div>
@@ -35,7 +35,7 @@ const Home = () => {
         <img src={heroImg02} alt='' className='w-full mb-[30px]'/>
         <img src={heroImg03} alt='' className='w-full'/>
         </div>
-      </div>
+      </div> */}
     </div>
     </div>
   </section>
@@ -45,9 +45,9 @@ const Home = () => {
    {/* ============= pros section================ */}
     <section>
       <div className="container">
-      <div className="xl:w-[470px] mx-auto">
+      {/* <div className="xl:w-[470px] mx-auto">
         <h2 className='heading text-center'>Os nossos profissionais</h2>
-      </div>
+      </div> */}
       <Pros />
       </div>
     </section>
@@ -58,7 +58,7 @@ const Home = () => {
     <div className="container">
       <div className="flex justify-between gap-[50px] lg:gap-0">
         <div className="w-1/2 hidden md:block">
-          <img src={faqImg} alt="" />
+          <img src={faqImg} alt="" className='rounded-lg h-[px]'/>
         </div>
 
         <div className="w-full md:w-1/2">
