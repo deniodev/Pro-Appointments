@@ -34,13 +34,20 @@ const Pros = () => {
             <input 
             type="search"
             className='py-4 pl-4 pr-2 bg-transparent w-full focus:outline-none cursor-pointer'
-            placeholder='Pesquise pelo nome ou categoria'
+            placeholder='Pesquise pelo nome'
             value={query}
             onChange={e=> setQuery(e.target.value)}
             />
-            <button className='btn mt-0 rounded-[0px] rounded-r-md' onClick={handleSearch}>
-              Pesquisar
-            </button>
+
+            <select 
+              className='btn mt-0 rounded-[0px] rounded-r-md' 
+                    onChange={(e) => filterByCategory(e.target.value)}
+                >
+                    <option value="All">Categorias</option>
+                    <option value="Category 1">Design</option>
+                    <option value="Category 2">Eventos</option>
+                </select>
+
         </div>
     </div>
 
