@@ -83,47 +83,46 @@ const Gallery = ({ proData }) => {
 
     return (
         <div>
-            <div className='relative w-[130px] h-[50px]'>
-                <input 
-                    type="file"
-                    name='photo'
-                    id="customFile"
-                    onChange={handleImageChange}
-                    accept='.jpeg, .png'
-                    className='absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer'
-                    multiple
-                />
+           <div className='relative flex items-center'>
+    <input 
+        type="file"
+        name='photo'
+        id="customFile"
+        onChange={handleImageChange}
+        accept='.jpeg, .png'
+        className='absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer'
+        multiple
+    />
 
-                <label 
-                    htmlFor="customFile" 
-                    className='absolute top-0 left-0 w-full h-full flex items-center px-[1.2rem] py-[0.375rem]
-                    text-[18px] leading-[25px] overflow-hidden bg-[#0066ff46] text-headingColor font-semibold
-                    rounded-lg truncate cursor-pointer'
-                >
-                    Selecionar
-                </label>
+    <label 
+        htmlFor="customFile" 
+        className='absolute top-0 left-0 flex items-center px-[1.2rem] py-[0.375rem]
+        text-[18px] leading-[25px] overflow-hidden bg-[#0066ff46] text-headingColor font-semibold
+        rounded-lg truncate cursor-pointer'
+        style={{width: '130px', height: '50px'}}
+    >
+        Selecionar
+    </label>
 
-                <button
-                    type="submit"
-                    onClick={uploadImages}
-                    className="overflow-hidden bg-[#0066ff46] text-headingColor font-semibold text-[18px] leading-[25px] w-full py-3 px-4 rounded-lg ml-[220px]"
-                >
-                    Upload
-                </button>
+    <button
+        type="submit"
+        onClick={uploadImages}
+        className=" overflow-hidden bg-[#0066ff46] text-headingColor font-semibold text-[18px] leading-[25px] py-3 px-4 rounded-lg ml-[220px]"
+    >
+        Upload
+    </button>
 
-                <button
-                    type="submit"
-                    onClick={updateProfileHandler}
-                    className="overflow-hidden bg-[#0066ff46] text-headingColor font-semibold text-[18px] leading-[25px] w-full py-3 px-4 rounded-lg ml-[220px]"
-                >
-                    Atualizar
-                </button>
-            </div> 
+    <button
+        type="submit"
+        onClick={updateProfileHandler}
+        className="overflow-hidden bg-[#0066ff46] text-headingColor font-semibold text-[18px] leading-[25px] py-3 px-4 rounded-lg ml-[120px]"
+    >
+        Atualizar
+    </button>
+</div>
+ 
 
             <div>
-                <h3 className="text-[20px] leading-[30px] text-headingColor font-semibold flex items-center gap-2 mt-5">
-                    Trabalhos Recentes
-                </h3>
                 <div className="image-container mt-[30px]">
                     {urls.map((url, index) => (
                         <img key={index} src={url} alt={`Image ${index}`} className='mb-2'/>
