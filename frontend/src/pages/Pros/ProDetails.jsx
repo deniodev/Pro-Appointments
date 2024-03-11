@@ -72,8 +72,8 @@ const ProDetails = () => {
                   <p className='text__para text-[14px] leading-6 md:text-[15px] lg:max-w-[390px] font-bold'>
                   📍 {city}
                   </p>
-
               </div>
+              
             </div>
 
               <div className="mt-[50px] border-b border-solid border-[#0066ff34]">
