@@ -1,21 +1,25 @@
 import React from 'react';
-import img1 from '../../assets/images/toyota/img1.jpg'
-import img2 from '../../assets/images/toyota/img2.jpg'
-import img3 from '../../assets/images/toyota/img3.jpg'
+import useFetchData from '../../hooks/useFetchData';
+import { BASE_URL } from '../../config';
+import { useParams } from 'react-router-dom';
 
 const Portfolio = () => {
+  const { id } = useParams();
+  const { data: pro } = useFetchData(`${BASE_URL}/pros/${id}`);
+  const { portfolio } = pro;
+
   return (
     <div>
-       <h3 className="text-[20px] leading-[30px] text-headingColor font-semibold flex items-center gap-2 mt-5">
-                Trabalhos Recentes
-        </h3>
-      <div className="image-container mt-[30px]">
-        <img src={img1} alt="Image Description"  className='mb-2'/>
-        <img src={img2} alt="Image Description" className='mb-2'/>
-        <img src={img3} alt="Image Description" className='mb-2'/>
-      </div>
+      {portfolio && portfolio.map((image, index) => (
+        <img
+        className='mt-2'
+        key={index} 
+        src={image} 
+        alt={`Portfolio Image ${index + 1}`} />
+      ))}
     </div>
   );
 };
 
 export default Portfolio;
+
