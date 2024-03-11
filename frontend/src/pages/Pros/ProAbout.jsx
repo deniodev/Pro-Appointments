@@ -1,6 +1,6 @@
 import { formateDate } from '../../utils/formateDate';
 
-const ProAbout = ({name, about, qualifications, experiences}) => {
+const ProAbout = ({name, about, qualifications, experiences, portfolio}) => {
   return (
     <div>
         <div>
@@ -64,9 +64,7 @@ const ProAbout = ({name, about, qualifications, experiences}) => {
             ))}
             
         </ul>
-    </div>    
-
-
+    </div>   
     </div>
   )
 }
