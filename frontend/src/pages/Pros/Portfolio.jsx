@@ -12,7 +12,7 @@ const Portfolio = () => {
     <div>
       {portfolio && portfolio.map((image, index) => (
         <img
-        className='mt-2'
+        className='mt-2 rounded-md'
         key={index} 
         src={image} 
         alt={`Portfolio Image ${index + 1}`} />
