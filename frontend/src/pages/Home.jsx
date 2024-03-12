@@ -1,5 +1,4 @@
 import React from 'react';
-import faqImg from '../assets/images/faq-img.jpg';
 import FaqList from '../components/Faq/FaqList';
 import Pros from './Pros/Pros';
 
@@ -23,17 +22,10 @@ const Home = () => {
    {/* ============= faq section ================ */}
    <section>
     <div className="container">
-      <div className="flex justify-between gap-[50px] lg:gap-0">
-        <div className="w-1/2 hidden md:block">
-          <img src={faqImg} alt="" className='rounded-lg h-[px]'/>
-        </div>
-
-        <div className="w-full md:w-1/2">
-          <h2 className="heading">Perguntas frequentes</h2>
-
+        <div className="w-full">
+          <h2 className="heading text-center">Perguntas frequentes</h2>
           <FaqList />
         </div>
-      </div>
     </div>
    </section>
    {/* ============= faq section end ================ */}
