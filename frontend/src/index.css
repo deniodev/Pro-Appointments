@@ -26,7 +26,7 @@
     }
 
     .header{
-        @apply bg-[url('./assets/images/mask.png')] bg-no-repeat bg-center 
+        @apply  bg-no-repeat bg-center 
         bg-cover w-full h-[100px] leading-[100px];
     }
 
