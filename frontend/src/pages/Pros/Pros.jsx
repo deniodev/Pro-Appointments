@@ -40,7 +40,7 @@ const Pros = () => {
             />
 
             <select
-            className="btn appearance-none mt-0 rounded-[0px] rounded-r-md cursor-pointer pl-4 pr-4"
+            className="btn appearance-none mt-0 rounded-[0px] rounded-r-md cursor-pointer pl-6 pr-[0px]"
             value={selectedCategory}
             onChange={e => setSelectedCategory(e.target.value)}
             >
