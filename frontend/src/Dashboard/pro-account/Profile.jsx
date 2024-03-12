@@ -286,7 +286,7 @@ const Profile = ({ proData }) => {
                     />
                   </div>
                   <div>
-                    <p className="form__label">Instituição de ensino*</p>
+                    <p className="form__label">Instituição*</p>
                     <input
                       type="text"
                       name="university"

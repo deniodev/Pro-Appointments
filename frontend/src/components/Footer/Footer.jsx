@@ -4,6 +4,7 @@ import logo from '../../assets/images/logo.png';
 import { RiLinkedinFill } from 'react-icons/ri';
 import { AiFillYoutube, AiFillGithub, AiOutlineInstagram } from 'react-icons/ai';
 
+
 const socialLinks = [
   {
     path: "/",
@@ -23,46 +24,6 @@ const socialLinks = [
   },
 ];
 
-const quickLinks01 = [
-  {
-    path: "/home",
-    display: "Home",
-  },
-  {
-    path: "/",
-    display: "Nossa missão",
-  },
-  {
-    path: "/",
-    display: "Serviços",
-  },
-];
-
-const quickLinks02 = [
-  {
-    path: "/find-a-doctor",
-    display: "Pesquisar Profissional",
-  },
-  {
-    path: "/",
-    display: "Agendar um encontro",
-  },
-  {
-    path: "/",
-    display: "Pesquisar região",
-  },
-];
-
-const quickLinks03 = [
-  {
-    path: "/",
-    display: "Donativo",
-  },
-  {
-    path: "/contact",
-    display: "Contacto",
-  },
-];
 
 
 const Footer = () => {
@@ -90,57 +51,6 @@ const Footer = () => {
               {link.icon}
             </Link>)}
           </div>
-        </div>
-
-        <div>
-            <h2 className="text-[20px] leading-[30px] font-[700] mb-6 text-headingColor">
-              Quick Links
-            </h2>
-
-            <ul>
-              {quickLinks01.map((item,index)=> (
-              <li key={index} className='mb-4'>
-                <Link to={item.path} 
-                className='text-[16px] leading-7 font-[400] text-textColor'>
-                  {item.display}
-                </Link>
-              </li>
-              ))}
-            </ul>
-        </div>
-
-        <div>
-            <h2 className="text-[20px] leading-[30px] font-[700] mb-6 text-headingColor">
-              Eu quero:
-            </h2>
-
-            <ul>
-              {quickLinks02.map((item,index)=> (
-              <li key={index} className='mb-4'>
-                <Link to={item.path} 
-                className='text-[16px] leading-7 font-[400] text-textColor'>
-                  {item.display}
-                </Link>
-              </li>
-              ))}
-            </ul>
-        </div>
-
-        <div>
-            <h2 className="text-[20px] leading-[30px] font-[700] mb-6 text-headingColor">
-              Suporte
-            </h2>
-
-            <ul>
-              {quickLinks03.map((item,index)=> (
-              <li key={index} className='mb-4'>
-                <Link to={item.path} 
-                className='text-[16px] leading-7 font-[400] text-textColor'>
-                  {item.display}
-                </Link>
-              </li>
-              ))}
-            </ul>
         </div>
 
       </div>

@@ -82,27 +82,21 @@ const Gallery = ({ proData }) => {
     };
 
     return (
-        <div>
-           <div className='relative flex items-center'>
+    <div>
+       <h2 className="text-headingColor font-bold text-[24px] leading-9 mb-10">
+      Atualize a sua galeria
+      </h2>
+      <div className='relative items-center'>
     <input 
         type="file"
         name='photo'
         id="customFile"
         onChange={handleImageChange}
         accept='.jpeg, .png'
-        className='absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer'
+        className=''
         multiple
     />
 
-    <label 
-        htmlFor="customFile" 
-        className='absolute top-0 left-0 flex items-center px-[1.2rem] py-[0.375rem]
-        text-[18px] leading-[25px] overflow-hidden bg-[#0066ff46] text-headingColor font-semibold
-        rounded-lg truncate cursor-pointer'
-        style={{width: '130px', height: '50px'}}
-    >
-        Selecionar
-    </label>
 
     <button
         type="submit"
@@ -121,14 +115,6 @@ const Gallery = ({ proData }) => {
     </button>
 </div>
  
-
-            <div>
-                <div className="image-container mt-[30px]">
-                    {urls.map((url, index) => (
-                        <img key={index} src={url} alt={`Image ${index}`} className='mb-2'/>
-                    ))}
-                </div>
-            </div>
         </div>
     );
 }
