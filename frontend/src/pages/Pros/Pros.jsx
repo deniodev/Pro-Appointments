@@ -30,7 +30,7 @@ const Pros = () => {
   <>
 
     <div className="container text-center">
-        <div className="max-w-[570px] mt-[10px] mx-auto bg-[#0066ff2c] rounded-md flex items-center justify-between">
+        <div className="max-w-[400px] mt-[10px] mx-auto bg-[#0066ff2c] rounded-md flex items-center justify-between">
             <input 
             type="search"
             className='py-4 pl-4 pr-2 bg-transparent w-full focus:outline-none cursor-pointer'
@@ -40,14 +40,13 @@ const Pros = () => {
             />
 
             <select 
-              className='btn mt-0 rounded-[0px] rounded-r-md' 
+              className=' btn appearance-none mt-0 rounded-[0px] rounded-r-md cursor-pointer' 
                     onChange={(e) => filterByCategory(e.target.value)}
                 >
                     <option value="All">Categorias</option>
                     <option value="Category 1">Design</option>
                     <option value="Category 2">Eventos</option>
                 </select>
-
         </div>
     </div>
 
