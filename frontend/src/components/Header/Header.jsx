@@ -51,7 +51,9 @@ const Header = () => {
       <div className='flex items-center justify-between'>
           {/* ======== logo ======== */}
           <div>
+            <Link to="/home">
             <img src={logo} alt="" />
+            </Link>
           </div>
 
           {/* ======== menu ========= */}
