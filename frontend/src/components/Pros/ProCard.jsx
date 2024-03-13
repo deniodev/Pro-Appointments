@@ -12,12 +12,13 @@ const ProCard = ({pro}) => {
     rounded-lg hover:shadow-lg cursor-pointer
      hover:shadow-primary
      hover:scale-105 transition-all ease-in-out'>
-    <div className='p-3 lg:p-5 className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">'>
+    <div className='block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">'>
         <div>
-            <img src={photo} className='w-full h-[260px] rounded-lg' alt="" />
+            <img src={photo} className='w-full h-[300px] rounded-lg' alt="" />
         </div>
 
-        <h2 className="text-[18px] leading-[30px] le:text-[26px] lg:leading-9 text-headingColor font-[700] mt-3 lg:mt-5">
+      <div className='p-2'>
+      <h2 className="text-[18px] leading-[30px] le:text-[26px] lg:leading-9 text-headingColor font-[700] mt-3 lg:mt-5">
             {name}
         </h2>
 
@@ -46,6 +47,7 @@ const ProCard = ({pro}) => {
         <p className='text__para text-[14px] leading-6 md:text-[15px] lg:max-w-[390px] font-bold'>
                   📍 {city}
         </p>
+      </div>
     </div>
     </Link>
   )
