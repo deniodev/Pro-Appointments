@@ -39,27 +39,38 @@ reviewSchema.pre(/^find/, function(next){
 reviewSchema.statics.calcAverageRatings = async function(proId){
 
   //this points the current review
-  const stats = await this.aggregate([{
-    $match:{pro:proId}
-  },
-  {
-    $group:{
-      _id:'$pro',
-      numOfRating:{$sum:1},
-      avgRating:{$avg:'$rating'}
+  const stats = await this.aggregate([
+    {
+      $match: { pro: proId }
+    },
+    {
+      $group: {
+        _id: "$pro",
+        numOfRating: { $sum: 1 },
+        avgRating: { $avg: "$rating" }
+      }
+    },
+    {
+      $project: {
+        _id: 0,
+        numOfRating: 1,
+        avgRating: { $round: ["$avgRating", 1] }
+      }
     }
-  }
-])
+  ]);
 
 await Pro.findByIdAndUpdate(proId, {
   totalRating: stats[0].numOfRating,
-  averageRating:stats[0].averageRating,
+  averageRating:stats[0].avgRating,
 });
-
 };
 
-reviewSchema.post('save', function(){
-  this.constructor.calcAverageRatings(this.pro)
+reviewSchema.post('save', async function(){
+  try {
+    await this.constructor.calcAverageRatings(this.pro);
+  } catch (error) {
+    console.error(error);
+  }
 });
 
 export default mongoose.model("Review", reviewSchema);

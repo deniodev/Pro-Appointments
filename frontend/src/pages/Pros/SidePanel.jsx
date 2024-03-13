@@ -1,6 +1,6 @@
 const SidePanel = ({proId, phone}) => {
     const handleClick = () => {
-      window.open(`http://wa.me/${phone}`, '_blank');
+      window.open(`http://wa.me/+258${phone}`, '_blank');
     };
   
     return (
