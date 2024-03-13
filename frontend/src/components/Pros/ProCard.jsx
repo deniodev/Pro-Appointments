@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const ProCard = ({pro}) => {
 
-    const {name, avgRating, totalRating, photo, specialization, city, bio} = pro
+    const {name, averageRating, totalRating, photo, specialization, city, bio} = pro
 
   return (
     <Link to={`/pros/${pro._id}`} className='shadow-md 
@@ -35,7 +35,7 @@ const ProCard = ({pro}) => {
             <div className="flex items-center gap-[6px]">
                 <span className='flex items-center gap-[6px] text-[14px] leading-6 lg:text-[16px] lg:leading-7 
                 font-semibold text-headingColor'>
-                    <img src={starIcon} alt="" />{avgRating}
+                    <img src={starIcon} alt="" />{averageRating}
                 </span>
                 <span className='text-[14px] leading-6 lg:text-[16px] lg:leading-7 
                 font-[400] text-textColor'>
