@@ -1,15 +1,22 @@
 import React from 'react';
 import FaqList from '../components/Faq/FaqList';
 import Pros from './Pros/Pros';
+import { useTranslation } from 'react-i18next';
+
 
 const Home = () => { 
+
+  const { t } = useTranslation();
+
   return  <> 
       <section>
-  <div className='flex items-center gap-3 flex-col justify-center  pb-7'>
+        <div className='flex items-center gap-3 flex-col justify-center  pb-7'>
         <h2 className='font-bold text-[46px] text-center'>
-        Agende com profissionais
-            <br></br> perto de você </h2>
-        <h2 className='text-xl text-gray-400 text-center'>Explore os melhores serviços e reparos domésticos perto de você</h2>
+        {t("hero")} <br/> {t("hero1")}
+        </h2>
+        <h2 className='text-xl text-gray-400 text-center'>
+          {t("hero2")}
+        </h2>
 
     </div>
 
