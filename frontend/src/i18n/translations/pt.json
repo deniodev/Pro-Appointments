@@ -3,7 +3,10 @@
         "hero": "Agende com profissionais",
         "hero1": "perto de você",
         "hero2": "Explore os melhores serviços e reparos domésticos perto de você",
-        "selectLanguage": "Idioma"
+        "selectLanguage": "Idioma",
+        "home": "Home",
+        "service": "Serviços",
+        "contact": "Contacto"
     }
 }
 

@@ -3,6 +3,9 @@
         "hero": "Make an appointment with professionals",
         "hero1": "near you",
         "hero2": "Explore the best home services and repairs near you",
-        "selectLanguage": "Language"
+        "selectLanguage": "Language",
+        "home": "Home",
+        "service": "Services",
+        "contact": "Contact"
     }
 }
