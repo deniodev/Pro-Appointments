@@ -5,7 +5,12 @@ import Loader from '../../components/Loader/Loading';
 import Error from '../../components/Error/Error'
 import { useEffect, useState } from 'react';
 
+import { useTranslation } from 'react-i18next';
+
 const Pros = () => {
+
+  const { t } = useTranslation();
+
   const [query, setQuery] = useState('');
   const [debounceQuery, setDebounceQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -34,7 +39,7 @@ const Pros = () => {
             <input 
             type="search"
             className='py-4 pl-4 pr-2 bg-transparent w-full focus:outline-none cursor-text'
-            placeholder='Pesquisar'
+            placeholder={t("search")}
             value={query}
             onChange={e=> setQuery(e.target.value)}
             />
@@ -44,13 +49,13 @@ const Pros = () => {
             value={selectedCategory}
             onChange={e => setSelectedCategory(e.target.value)}
             >
-              <option value="All">Todas Categorias</option>
-              <option value="Assistência Técnica">Assistência Técnica</option>
-              <option value="Aulas">Aulas</option>
-              <option value="Design e Tecnologia">Design e Tecnologia</option>
-              <option value="Eventos">Eventos</option>
-              <option value="Reformas">Reformas</option>
-              <option value="Serviços Domésticos">Serviços Domésticos</option>
+              <option value="All">{t("all")}</option>
+              <option value="Assistência Técnica">{t("aTec")}</option>
+              <option value="Aulas">{t("aulas")}</option>
+              <option value="Design e Tecnologia">{t("dTec")}</option>
+              <option value="Eventos">{t("eventos")}</option>
+              <option value="Reformas">{t("reformas")}</option>
+              <option value="Serviços Domésticos">{t("sDom")}</option>
           </select>
         </div>
     </div>
