@@ -6,7 +6,15 @@
         "selectLanguage": "Idioma",
         "home": "Home",
         "service": "Serviços",
-        "contact": "Contacto"
+        "contact": "Contacto",
+        "search": "Pesquisar",
+        "all": "Todas Categorias",
+        "aTec": "Assistência Técnica",
+        "aulas": "Aulas",
+        "dTec": "Design e Tecnologia",
+        "eventos": "Eventos",
+        "reformas": "Reformas",
+        "sDom": "Serviços Domésticos"
     }
 }
 
