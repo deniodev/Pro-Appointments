@@ -5,23 +5,29 @@ import { BiMenu } from 'react-icons/bi';
 import { authContext } from '../../context/AuthContext'; 
 import { LanguageSwitcher } from '../LanguageSwitcher';
 
-const navLinks = [
-  {
-    path: '/home',
-    display: 'Home'
-  },
-  {
-    path: '/services',
-    display: 'Serviços'
-  },
-  {
-    path: '/contact',
-    display: 'Contacto'
-  },
+import { useTranslation } from 'react-i18next';
 
-]
+
 
 const Header = () => {
+
+  const { t } = useTranslation();
+
+  const navLinks = [
+    {
+      path: '/home',
+      display: `${t('home')}`
+    },
+    {
+      path: '/services',
+      display: `${t('service')}`
+    },
+    {
+      path: '/contact',
+      display: `${t('contact')}`
+    },
+  
+  ]
 
   const headerRef = useRef(null);
   const menuRef = useRef(null);
@@ -75,12 +81,14 @@ const Header = () => {
             </ul>
           </div>
 
-          <LanguageSwitcher />
+          
+          
 
 
 
       {/* ============ nav right ========= */}
       <div className="flex items-center gap-4">
+      <LanguageSwitcher />
         {token && user ? (
         <div>
           <Link
