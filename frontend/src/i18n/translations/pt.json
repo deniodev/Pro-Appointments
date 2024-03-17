@@ -21,7 +21,28 @@
         "gallery": "Galeria",
         "feedback": "Avaliação",
         "book": "Agende Agora",
-        "review": "Todas as avaliações"
+        "review": "Todas as avaliações",
+        "profile": "Informação do Perfil",
+        "name": "Nome",
+        "phone": "Telefone",
+        "city": "Cidade",
+        "gender": "Gênero",
+        "select": "Selecione",
+        "male": "Masculino",
+        "female": "Femenino",
+        "specialization": "Especialização",
+        "qualifications": "Qualificações",
+        "startingDate": "Data de início",
+        "endingDate": "Data do fim",
+        "degree": "Grau académico",
+        "university": "Instituição",
+        "addDegree": "Adicionar Qualificação",
+        "experiences": "Experiências",
+        "position": "Posição",
+        "company": "Empresa",
+        "addExperience": "Adicionar Experiência",
+        "uploadPhoto": "Carregar foto",
+        "updateProfile": "Atualizar Perfil"
     }
 }
 

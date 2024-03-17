@@ -21,6 +21,27 @@
         "gallery": "Gallery",
         "feedback": "Feedback",
         "book": "Book Now",
-        "review": "All reviews"
+        "review": "All reviews",
+        "profile": "Profile Info",
+        "name": "Name",
+        "phone": "Phone",
+        "city": "City",
+        "gender": "Gender",
+        "select": "Select",
+        "male": "Male",
+        "female": "Female",
+        "specialization": "Specialization",
+        "qualifications": "Qualifications",
+        "startingDate": "Starting Date",
+        "endingDate": "Ending Date",
+        "degree": "Degree",
+        "university": "Institution",
+        "addDegree": "Add Degree",
+        "experiences": "Experiences",
+        "position": "Position",
+        "company": "Company",
+        "addExperience": "Add Experience",
+        "uploadPhoto": "Upload Photo",
+        "updateProfile": "Update Profile"
     }
 }

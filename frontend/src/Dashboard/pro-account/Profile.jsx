@@ -5,7 +5,12 @@ import uploadImageToCloudinary from "../../utils/uploadCloudinary";
 import { BASE_URL, token } from "../../config";
 import { toast } from "react-toastify";
 
+import { useTranslation } from 'react-i18next';
+
 const Profile = ({ proData }) => {
+
+  const { t } = useTranslation();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -150,12 +155,12 @@ const Profile = ({ proData }) => {
   return (
     <div>
       <h2 className="text-headingColor font-bold text-[24px] leading-9 mb-10">
-      Informação do Perfil
+      {t("profile")}
       </h2>
 
       <form>
         <div className="mb-5">
-          <p className="form__label">Nome*</p>
+          <p className="form__label">{t("name")}*</p>
           <input
             type="text"
             name="name"
@@ -180,7 +185,7 @@ const Profile = ({ proData }) => {
           />
         </div>
         <div className="mb-5">
-          <p className="form__label">Telefone*</p>
+          <p className="form__label">{t("phone")}*</p>
           <input
             type="number"
             name="phone"
@@ -191,7 +196,7 @@ const Profile = ({ proData }) => {
           />
         </div>
         <div className="mb-5">
-          <p className="form__label">Cidade*</p>
+          <p className="form__label">{t("city")}*</p>
           <input
             type="text"
             name="city"
@@ -217,44 +222,46 @@ const Profile = ({ proData }) => {
         <div className="mb-5">
           <div className="grid grid-cols-2 gap-5 mb-[30px]">
             <div>
-              <p className="form__label">Gênero*</p>
+              <p className="form__label">{t("gender")}*</p>
               <select
                 name="gender"
                 value={formData.gender}
                 onChange={handleInputChange}
                 className="form__input py-3.5"
               >
-                <option value="male">Masculino</option>
-                <option value="female">Femenino</option>
+                <option value="">{t("select")}</option>
+                <option value="male">{t("male")}</option>
+                <option value="female">{t("female")}</option>
               </select>
             </div>
             <div>
-              <p className="form__label">Especialização*</p>
+              <p className="form__label">{t("specialization")}*</p>
               <select
                 name="specialization"
                 value={formData.specialization}
                 onChange={handleInputChange}
                 className="form__input py-3.5"
               >
-                <option value="Assistência Técnica">Assistência Técnica</option>
-                <option value="Aulas">Aulas</option>
-                <option value="Design e Tecnologia">Design e Tecnologia</option>
-                <option value="Eventos">Eventos</option>
-                <option value="Reformas">Reformas</option>
-                <option value="Serviços Domésticos">Serviços Domésticos</option>
+                <option value="All">{t("all")}</option>
+                <option value="Assistência Técnica">{t("aTec")}</option>
+                <option value="Aulas">{t("aulas")}</option>
+                <option value="Design e Tecnologia">{t("dTec")}</option>
+                <option value="Eventos">{t("eventos")}</option>
+                <option value="Reformas">{t("reformas")}</option>
+                <option value="Serviços Domésticos">{t("sDom")}</option>
               </select>
             </div>
           </div>
         </div>
 
         <div className="mb-5">
-          <p className="form__label">Qualificações*</p>
+          <p className="form__label">{t("qualifications")}*</p>
           {formData.qualifications?.map((item, index) => (
             <div key={index}>
               <div>
                 <div className="grid grid-cols-2 gap-5">
                   <div>
-                    <p className="form__label">Data de início*</p>
+                    <p className="form__label">{t("startingDate")}*</p>
                     <input
                       type="date"
                       name="startingDate"
@@ -264,7 +271,7 @@ const Profile = ({ proData }) => {
                     />
                   </div>
                   <div>
-                    <p className="form__label">Data do fim*</p>
+                    <p className="form__label">{t("endingDate")}*</p>
                     <input
                       type="date"
                       name="endingDate"
@@ -276,7 +283,7 @@ const Profile = ({ proData }) => {
                 </div>
                 <div className="grid grid-cols-2 gap-5 mt-5">
                   <div>
-                    <p className="form__label">Grau académico*</p>
+                    <p className="form__label">{t("degree")}*</p>
                     <input
                       type="text"
                       name="degree"
@@ -286,7 +293,7 @@ const Profile = ({ proData }) => {
                     />
                   </div>
                   <div>
-                    <p className="form__label">Instituição*</p>
+                    <p className="form__label">{t("university")}*</p>
                     <input
                       type="text"
                       name="university"
@@ -310,18 +317,18 @@ const Profile = ({ proData }) => {
             className="bg-[#000] py-2 px-5 rounded text-white h-fit cursor-pointer"
             onClick={addQualification}
           >
-            Adicionar Qualificação
+            {t("addDegree")}
           </button>
         </div>
 
         <div className="mb-5">
-          <p className="form__label">Experiências*</p>
+          <p className="form__label">{t("experiences")}*</p>
           {formData.experiences?.map((item, index) => (
             <div key={index}>
               <div>
                 <div className="grid grid-cols-2 gap-5">
                   <div>
-                    <p className="form__label">Data de início*</p>
+                    <p className="form__label">{t("startingDate")}*</p>
                     <input
                       type="date"
                       name="startingDate"
@@ -331,7 +338,7 @@ const Profile = ({ proData }) => {
                     />
                   </div>
                   <div>
-                    <p className="form__label">Data do fim*</p>
+                    <p className="form__label">{t("endingDate")}*</p>
                     <input
                       type="date"
                       name="endingDate"
@@ -343,7 +350,7 @@ const Profile = ({ proData }) => {
                 </div>
                 <div className="grid grid-cols-2 gap-5 mt-5">
                   <div>
-                    <p className="form__label">Posição*</p>
+                    <p className="form__label">{t("position")}*</p>
                     <input
                       type="text"
                       name="position"
@@ -353,7 +360,7 @@ const Profile = ({ proData }) => {
                     />
                   </div>
                   <div>
-                    <p className="form__label">Empresa*</p>
+                    <p className="form__label">{t("company")}*</p>
                     <input
                       type="text"
                       name="company"
@@ -377,12 +384,12 @@ const Profile = ({ proData }) => {
             onClick={addExperience}
             className="bg-[#000] py-2 px-5 rounded text-white h-fit cursor-pointer"
           >
-            Adicionar Experiência
+            {t("addExperience")}
           </button>
         </div>
 
         <div className="mb-5">
-          <p className="form__label">Acerca*</p>
+          <p className="form__label">{t("about")}*</p>
           <textarea
             name="about"
             rows={5}
@@ -423,7 +430,7 @@ const Profile = ({ proData }) => {
             text-[15px] leading-6 overflow-hidden bg-[#0066ff46] text-headingColor font-semibold
             rounded-lg truncate cursor-pointer"
             >
-              Carregar foto
+              {t("uploadPhoto")}
             </label>
           </div>
         </div>
