@@ -10,7 +10,11 @@ import Loader from '../../components/Loader/Loading';
 import { useParams } from 'react-router-dom';
 import Portfolio from './Portfolio';
 
+import { useTranslation } from 'react-i18next';
+
 const ProDetails = () => {
+
+  const { t } = useTranslation();
 
   const [tab,setTab] = useState('about');
 
@@ -81,21 +85,21 @@ const ProDetails = () => {
                 onClick={()=> setTab('about')}
                 className={`${tab==='about' && 'border-b border-solid border-primaryColor'} 
                 py-2 px-3 mr-5 text-[16px] leading-7 text-headingColor font-semibold`}>
-                  Sobre
+                  {t("about")}
                 </button>
 
                 <button 
                 onClick={()=> setTab('portfolio')}
                 className={`${tab==='portfolio' && 'border-b border-solid border-primaryColor'} 
                 py-2 px-5 mr-5 text-[16px] leading-7 text-headingColor font-semibold`}>
-                  Galeria
+                  {t("gallery")}
                 </button>
 
                 <button 
                 onClick={()=> setTab('feedback')}
                 className={`${tab==='feedback' && 'border-b border-solid border-primaryColor'} 
                 py-2 px-5 mr-5 text-[16px] leading-7 text-headingColor font-semibold`}>
-                  Feedback
+                  {t("feedback")}
                 </button>
 
              

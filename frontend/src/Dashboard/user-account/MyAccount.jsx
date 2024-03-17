@@ -6,7 +6,11 @@ import { BASE_URL } from '../../config';
 import Loading from '../../components/Loader/Loading';
 import Error from '../../components/Error/Error';
 
+import { useTranslation } from 'react-i18next';
+
 const MyAccount = () => {
+
+    const { t } = useTranslation();
 
     const {dispatch} = useContext(authContext);
     const [tab,setTab] = useState('bookings');
@@ -42,20 +46,14 @@ const MyAccount = () => {
                     <p className="text-textColor text-[15px] leading-6 font-medium">
                         {userData.email}
                     </p>
-                    <p className="text-textColor text-[15px] leading-6 font-medium">
-                        Telefone:{" "}
-                        <span className="ml-2 text-headingColor text-[22px] leading-8">
-                           {userData.bloodType}
-                        </span>
-                    </p>
                 </div>
 
                 <div className="mt-[50px] md:mt-[100px]">
                     <button onClick={handleLogout} className='w-full bg-[#181A1E] p-3 text-[16px] leading-7 rounded-md text-white'>
-                        Logout
+                        {t("logout")}
                     </button>
                     <button className='w-full bg-red-600 mt-4 p-3 text-[16px] leading-7 rounded-md text-white'>
-                        Apagar a conta
+                    {t("deleteAccount")}
                     </button>
                 </div>
             </div>
@@ -66,7 +64,7 @@ const MyAccount = () => {
                 onClick={()=> setTab('settings')} 
                 className={`${tab === 'settings' && 'bg-primaryColor text-white font-normal'} py-2 px-5 rounded-md text-headingColor 
                 font-semibold text-[16px] leading-7 border border-solid border-primaryColor`}>
-                    Configurações
+                    {t("settings")}
                 </button>
                 </div>
                 {

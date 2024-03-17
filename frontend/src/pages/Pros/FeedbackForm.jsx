@@ -5,7 +5,12 @@ import { BASE_URL, token } from '../../config';
 import { toast } from 'react-toastify';
 import HashLoader from 'react-spinners/HashLoader';
 
+import { useTranslation } from 'react-i18next';
+
 const FeedbackForm = () => {
+
+    const { t } = useTranslation();
+
     const [rating,setRating] = useState(0);
     const [hover,setHover] = useState(0);
     const [reviewText,setReviewText] = useState("");
@@ -50,7 +55,7 @@ const FeedbackForm = () => {
     <form action="">
         <div>
             <h3 className="text-headingColor text-[16px] leading-6 font-semibold mb-4 mt-0">
-            Como você avaliaria a experiência geral?*
+            {t("review1")}*
             </h3>
 
             <div>
@@ -87,12 +92,12 @@ const FeedbackForm = () => {
 
         <div className="mt-[30px]">
             <h3 className="text-headingColor text-[16px] leading-6 font-semibold mb-4 mt-0">
-            Compartilhe seus comentários ou sugestões*
+            {t("review2")}*
             </h3>
             <textarea className='border border-solid border-[#0066ff34] focus:outline outline-primaryColor
             w-full px-4 py-3 rounded-md'
              rows='5'
-             placeholder='Escreva sua mensagem'
+             placeholder={t("review3")}
              onChange={e=>setReviewText(e.target.value)}
              >
             </textarea>
@@ -103,7 +108,7 @@ const FeedbackForm = () => {
         className='btn'
         onClick={handleSubmitReview}
         >
-            {loading ? <HashLoader size={25} color='#fff'/> : 'Enviar comentários'}
+            {loading ? <HashLoader size={25} color='#fff'/> : `${t("sendFeedback")}`}
         </button>
     </form>
   )

@@ -6,7 +6,11 @@ import { BASE_URL } from '../config';
 import {toast} from 'react-toastify';
 import HashLoader from 'react-spinners/HashLoader';
 
+import { useTranslation } from 'react-i18next';
+
 const Signup = () => {
+
+  const { t } = useTranslation();
 
   const [selectedFile, setSelectedFile] = useState(null);
   const [previewURL, setPreviewURL] = useState("");
@@ -82,14 +86,14 @@ const Signup = () => {
           {/* ========== sign up form ========== */}
           <div className="rounded-l-lg lg:pl-16 py-10">
             <h3 className="text-headingColor text-[22px] leading-9 font-bold mb-10">
-              Registe a sua <span className='text-primaryColor'>conta</span>
+              {t("signup1")} <span className='text-primaryColor'>{t("account")}</span>
             </h3>
 
           <form onSubmit={submitHandler}>
           <div className="mb-5">
             <input 
             type="text"
-            placeholder="Nome Completo"
+            placeholder= {t("fullName")}
             name="name"
             value={formData.name}
             onChange={handleInputChange}
@@ -103,7 +107,7 @@ const Signup = () => {
           <div className="mb-5">
             <input 
             type="email"
-            placeholder="Seu Email"
+            placeholder="Email"
             name="email"
             value={formData.email}
             onChange={handleInputChange}
@@ -130,29 +134,29 @@ const Signup = () => {
 
           <div className="mb-5 flex items-center justify-between">         
             <label className='text-headingColor font-bold text-[16px] leading-7'>
-            Você é:
+            {t("you")}
               <select
                name="role"
                value={formData.role}
                onChange={handleInputChange}
                className='text-textColor font-semibold text-[15px] leading-7 px-4 py-3 focus:outline-none'
               >
-                <option value="selecionar">Selecionar</option>
-                <option value="client">Cliente</option>
-                <option value="pro">Profissional</option>
+                <option value="selecionar">{t("select")}</option>
+                <option value="client">{t("client")}</option>
+                <option value="pro">{t("professional")}</option>
               </select>
             </label>
 
             <label className='text-headingColor font-bold text-[16px] leading-7'>
-            Género:
+            {t("gender")}
               <select
                name="gender"
                value={formData.gender}
                onChange={handleInputChange}
                className='text-textColor font-semibold text-[15px] leading-7 px-4 py-3 focus:outline-none'>
-                <option value="selecionar">Selecionar</option>
-                <option value="male">Masculino</option>
-                <option value="female">Femenino</option>
+                <option value="selecionar">{t("select")}</option>
+                <option value="male">{t("male")}</option>
+                <option value="female">{t("female")}</option>
               </select>
             </label>
             </div> 
@@ -184,7 +188,7 @@ const Signup = () => {
             text-[15px] leading-6 overflow-hidden bg-[#0066ff46] text-headingColor font-semibold
             rounded-lg truncate cursor-pointer'
             >
-              Carregar foto
+              {t("uploadPhoto")}
             </label>
           </div> 
           </div>  
@@ -195,14 +199,14 @@ const Signup = () => {
             type="submit"
             className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3"
             >
-              { loading ? <HashLoader size={35} color="#ffffff"/> : 'Registar'}
+              { loading ? <HashLoader size={35} color="#ffffff"/> : `${t("signup")}`}
             </button>
           </div>
 
           <p className="mt-5 text-textColor text-center">
-          Já tem uma conta? 
+          {t("yet1")}
             <Link to='/login' className="text-primaryColor font-medium ml-1">
-              Login
+            {t("login")}
             </Link>
           </p>
 
