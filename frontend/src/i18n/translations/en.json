@@ -83,6 +83,18 @@
         "subject2": "Please let us know how we can help you",
         "message": "Your message",
         "comment": "Leave your comment....",
-        "send": "Send"
+        "send": "Send",
+        "serviceName1": "Technical Support",
+        "serviceDesc1": "Count on our specialized team to resolve technical problems in your equipment, ensuring smooth and efficient operation.",
+        "serviceName2": "Classes",
+        "serviceDesc2": "Explore a variety of classes taught by qualified professionals to help you develop new skills and achieve your learning goals.",
+        "serviceName3": "Design and Tech",
+        "serviceDesc3": "Let our design and technology experts turn your ideas into reality. From logo creation and graphic design to web and app development.",
+        "serviceName4": "Events",
+        "serviceDesc4": "Plan memorable events with the help of our experienced team. From organizational details to impeccable execution, we will take care of everything to ensure the success of your event.",
+        "serviceName5": "Renovations",
+        "serviceDesc5": "Renovate and transform spaces with our renovation services. From small updates to large-scale projects, our dedicated team works to make your vision a reality.",
+        "serviceName6": "Home Services",
+        "serviceDesc6": "Simplify your everyday life with our reliable home services. From residential cleaning to general repairs, we're here to help you keep your home in order."
     }
 }

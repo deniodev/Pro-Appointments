@@ -83,7 +83,19 @@
         "subject2": "Deixe-nos saber como podemos ajudá-lo",
         "message": "Sua mensagem",
         "comment": "Deixe o seu comentario....",
-        "send": "Enviar"
+        "send": "Enviar",
+        "serviceName1": "Assistência Técnica",
+        "serviceDesc1": "Conte com nossa equipe especializada para resolver problemas técnicos em seus equipamentos, garantindo um funcionamento suave e eficiente.",
+        "serviceName2": "Aulas",
+        "serviceDesc2": "Explore uma variedade de aulas ministradas por profissionais qualificados para ajudá-lo a desenvolver novas habilidades e alcançar seus objetivos de aprendizado.",
+        "serviceName3": "Design e Tecnologia",
+        "serviceDesc3": "Deixe nossos especialistas em design e tecnologia transformarem suas ideias em realidade. Desde criação de logotipos e design gráfico até desenvolvimento web e aplicativos.",
+        "serviceName4": "Eventos",
+        "serviceDesc4": "Planeje eventos memoráveis ​​com a ajuda de nossa equipe experiente. Dos detalhes de organização à execução impecável, cuidaremos de tudo para garantir o sucesso do seu evento.",
+        "serviceName5": "Reformas",
+        "serviceDesc5": "Renove e transforme espaços com nossos serviços de reforma. Desde pequenas atualizações até projetos de grande escala, nossa equipe dedicada trabalha para tornar sua visão uma realidade.",
+        "serviceName6": "Serviços Domésticos",
+        "serviceDesc6": "Simplifique sua vida cotidiana com nossos serviços domésticos confiáveis. De limpeza residencial a reparos gerais, estamos aqui para ajudar você a manter sua casa em ordem."
     }
 }
 
