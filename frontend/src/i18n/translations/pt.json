@@ -47,7 +47,11 @@
         "review2": "Compartilhe seus comentários ou sugestões",
         "review3": "Escreva sua mensagem",
         "sendFeedback": "Enviar comentários",
-        "yourFeedback": "Dê o seu Feedback"
+        "yourFeedback": "Dê o seu Feedback",
+        "overview": "Visão Geral",
+        "profile1": "Perfil",
+        "logout": "Sair",
+        "deleteAccount": "Apagar a conta"
     }
 }
 

@@ -47,6 +47,10 @@
         "review2": "Share your feedback or suggestions",
         "review3": "Write your message",
         "sendFeedback": "Send Feedback",
-        "yourFeedback": "Give your Feedback"
+        "yourFeedback": "Give your Feedback",
+        "overview": "Overview",
+        "profile1": "Profile",
+        "logout": "Log Out",
+        "deleteAccount": "Delete Account"
     }
 }
