@@ -3,15 +3,19 @@ import { formateDate } from '../../utils/formateDate';
 import {AiFillStar} from 'react-icons/ai';
 import FeedbackForm from './FeedbackForm';
 
+import { useTranslation } from 'react-i18next';
+
 const Feedback = ({reviews, totalRating}) => {
 
-  const [showFeedbackForm, setShowFeedbackForm] = useState(false)
+  const { t } = useTranslation();
+
+  const [showFeedbackForm, setShowFeedbackForm] = useState(false);
 
   return (
     <div>
     <div className='mb-[50px]'>
         <h4 className="text-[20px] leading-[30px] font-bold text-headingColor mb-[30px]">
-        Todas as avaliações ({totalRating})
+        {t("review")} ({totalRating})
         </h4>
 
        {reviews?.map((review, index) => (
