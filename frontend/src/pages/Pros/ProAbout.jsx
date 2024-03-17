@@ -1,12 +1,16 @@
 import { formateDate } from '../../utils/formateDate';
+import { useTranslation } from 'react-i18next';
 
-const ProAbout = ({name, about, qualifications, experiences, portfolio}) => {
+const ProAbout = ({name, about, qualifications, experiences}) => {
+
+    const { t } = useTranslation();
+
   return (
     <div>
         <div>
             <h3 className="text-[20px] leading-[30px] text-headingColor font-semibold flex items-center gap-2">
-                Sobre
-                <span className='text-irisBlueColor font-bold text-[24px] leading-9'>
+                {t("about")}
+                <span className='text-irisBlueColor font-bold text-[20px] leading-9'>
                     {name}
                 </span>
             </h3>
@@ -17,7 +21,7 @@ const ProAbout = ({name, about, qualifications, experiences, portfolio}) => {
 
         <div className="mt-12">
             <h3 className='text-[20px] leading-[30px] text-headingColor font-semibold'>
-            Educação
+            {t("education")}
             </h3>
 
             <ul className="pt-4 md:p-5">
@@ -44,7 +48,7 @@ const ProAbout = ({name, about, qualifications, experiences, portfolio}) => {
 
     <div className="mt-12">
         <h3 className='text-[20px] leading-[30px] text-headingColor font-semibold'>
-        Experiência
+        {t("experience")}
         </h3>
 
         <ul className='grid sm:grid-cols-2 gap-[30px] pt-4 md:p-5'>
