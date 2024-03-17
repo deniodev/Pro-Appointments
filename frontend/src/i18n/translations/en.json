@@ -56,6 +56,14 @@
         "welcome": "Welcome",
         "yet": "Don't have an account yet?",
         "signup": "Sig Up",
-        "login": "Log In"
+        "login": "Log In",
+        "signup1": "Register your",
+        "signup2": "account",
+        "fullName": "Full Name",
+        "you": "You are:",
+        "client": "Client",
+        "professional": "Professional",
+        "yet1": "Already have an account?",
+        "account": "account"
     }
 }

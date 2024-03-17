@@ -56,7 +56,15 @@
         "welcome": "Bem-vindo",
         "yet": "Ainda não tem uma conta?",
         "signup": "Cadastre-se",
-        "login": "Entrar"
+        "login": "Entrar",
+        "signup1": "Registe a sua",
+        "signup2": "conta",
+        "fullName": "Nome Completo",
+        "you": "Você é:",
+        "client": "Cliente",
+        "professional": "Profissional",
+        "yet1": "Já tem uma conta?",
+        "account": "conta"
     }
 }
 
