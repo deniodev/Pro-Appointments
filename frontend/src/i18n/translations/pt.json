@@ -51,7 +51,12 @@
         "overview": "Visão Geral",
         "profile1": "Perfil",
         "logout": "Sair",
-        "deleteAccount": "Apagar a conta"
+        "deleteAccount": "Apagar a conta",
+        "hi": "Olá!",
+        "welcome": "Bem-vindo",
+        "yet": "Ainda não tem uma conta?",
+        "signup": "Cadastre-se",
+        "login": "Entrar"
     }
 }
 

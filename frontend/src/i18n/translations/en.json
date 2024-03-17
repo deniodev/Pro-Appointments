@@ -51,6 +51,11 @@
         "overview": "Overview",
         "profile1": "Profile",
         "logout": "Log Out",
-        "deleteAccount": "Delete Account"
+        "deleteAccount": "Delete Account",
+        "hi": "Hi!",
+        "welcome": "Welcome",
+        "yet": "Don't have an account yet?",
+        "signup": "Sig Up",
+        "login": "Log In"
     }
 }
