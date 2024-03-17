@@ -441,7 +441,7 @@ const Profile = ({ proData }) => {
             onClick={updateProfileHandler}
             className="bg-primaryColor text-white text-[18px] leading-[30px] w-full py-3 px-4 rounded-lg"
           >
-            Atualizar perfil
+            {t("updateProfile")}
           </button>
         </div>
       </form>
