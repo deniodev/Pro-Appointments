@@ -17,6 +17,8 @@
         "sDom": "Home Services",
         "about": "About",
         "education": "Education",
-        "experience": "Experience"
+        "experience": "Experience",
+        "gallery": "Gallery",
+        "feedback": "Feedback"
     }
 }
