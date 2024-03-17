@@ -64,6 +64,7 @@
         "client": "Client",
         "professional": "Professional",
         "yet1": "Already have an account?",
-        "account": "account"
+        "account": "account",
+        "settings": "Settings"
     }
 }

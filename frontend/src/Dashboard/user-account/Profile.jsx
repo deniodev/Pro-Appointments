@@ -5,7 +5,11 @@ import { BASE_URL, token } from '../../config';
 import {toast} from 'react-toastify';
 import HashLoader from 'react-spinners/HashLoader';
 
+import { useTranslation } from 'react-i18next';
+
 const Profile = ({user}) => {
+
+  const { t } = useTranslation();
 
   const [selectedFile, setSelectedFile] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -77,7 +81,7 @@ const Profile = ({user}) => {
           <div className="mb-5">
             <input 
             type="text"
-            placeholder="Nome Completo"
+            placeholder={t("fullName")}
             name="name"
             value={formData.name}
             onChange={handleInputChange}
@@ -91,7 +95,7 @@ const Profile = ({user}) => {
           <div className="mb-5">
             <input 
             type="email"
-            placeholder="Seu Email"
+            placeholder="Email"
             name="email"
             value={formData.email}
             onChange={handleInputChange}
@@ -119,7 +123,7 @@ const Profile = ({user}) => {
           <div className="mb-5">
             <input 
             type="text"
-            placeholder="Telefone"
+            placeholder={t("phone")}
             name="phone"
             value={formData.phone}
             onChange={handleInputChange}
@@ -133,14 +137,15 @@ const Profile = ({user}) => {
           <div className="mb-5 flex items-center justify-between">         
     
             <label className='text-headingColor font-bold text-[16px] leading-7'>
-            Gênero:
+            {t("gender")}
               <select
                name="gender"
                value={formData.gender}
                onChange={handleInputChange}
                className='text-textColor font-semibold text-[15px] leading-7 px-4 py-3 focus:outline-none'>
-                <option value="male">Masculino</option>
-                <option value="female">Femenino</option>
+                <option value="">{t("select")}</option>
+                <option value="male">{t("male")}</option>
+                <option value="female">{t("female")}</option>
               </select>
             </label>
             </div> 
@@ -172,7 +177,7 @@ const Profile = ({user}) => {
             text-[15px] leading-6 overflow-hidden bg-[#0066ff46] text-headingColor font-semibold
             rounded-lg truncate cursor-pointer'
             >
-              {selectedFile ? selectedFile.name : "Carregar foto"}
+              {selectedFile ? selectedFile.name : `${t("uploadPhoto")}`}
             </label>
           </div> 
           </div>  
@@ -183,7 +188,7 @@ const Profile = ({user}) => {
             type="submit"
             className="w-full bg-primaryColor text-white text-[18px] leading-[30px] rounded-lg px-4 py-3"
             >
-              { loading ? <HashLoader size={25} color="#ffffff"/> : 'Atualizar'}
+              { loading ? <HashLoader size={25} color="#ffffff"/> : `${t("updateProfile")}`}
             </button>
           </div>
           </form>
