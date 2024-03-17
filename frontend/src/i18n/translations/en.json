@@ -65,6 +65,17 @@
         "professional": "Professional",
         "yet1": "Already have an account?",
         "account": "account",
-        "settings": "Settings"
+        "settings": "Settings",
+        "faq": "Frequently asked questions",
+        "faq1": "How can I find a professional suitable for me?",
+        "faq1a": "To find a suitable professional, you can start by browsing our platform and filtering results based on your location, area of expertise and reviews from previous clients. We are also available to help you find the ideal professional to meet your specific needs.",
+        "faq2": "What are the costs involved in the services you offer?",
+        "faq2a": "The costs of our services may vary depending on the type of work required, the professional's experience and other factors. We recommend that you contact the professional with more details about your project so that they can provide an accurate estimate of the costs involved.",
+        "faq3": "Do you have available professionals in my region?",
+        "faq3a": "Yes, we have a wide network of professionals in several regions. When performing a search on our platform, you can filter the results to find available professionals in your area.",
+        "faq4": "What is the process for booking services?",
+        "faq4a": "The scheduling process is simple. Once you have selected your desired professional on our platform, you can contact them directly to discuss availability and schedule a time that is convenient for both parties.",
+        "faq5": "Can I see examples of professionals' previous work before making a decision?",
+        "faq5a": "Certainly! Many of our professionals have online portfolios available on their profiles on our platform, where you can view examples of their previous work. Additionally, we can facilitate direct contact with the professional so you can discuss specific details and request references if desired."
     }
 }
