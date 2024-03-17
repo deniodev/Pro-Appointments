@@ -14,7 +14,7 @@ const ProAbout = ({name, about, qualifications, experiences}) => {
                     {name}
                 </span>
             </h3>
-            <p className="text__para">
+            <p className="text__para text-justify">
                 {about}
             </p>
         </div>
