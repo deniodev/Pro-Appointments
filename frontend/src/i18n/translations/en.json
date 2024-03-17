@@ -76,6 +76,13 @@
         "faq4": "What is the process for booking services?",
         "faq4a": "The scheduling process is simple. Once you have selected your desired professional on our platform, you can contact them directly to discuss availability and schedule a time that is convenient for both parties.",
         "faq5": "Can I see examples of professionals' previous work before making a decision?",
-        "faq5a": "Certainly! Many of our professionals have online portfolios available on their profiles on our platform, where you can view examples of their previous work. Additionally, we can facilitate direct contact with the professional so you can discuss specific details and request references if desired."
+        "faq5a": "Certainly! Many of our professionals have online portfolios available on their profiles on our platform, where you can view examples of their previous work. Additionally, we can facilitate direct contact with the professional so you can discuss specific details and request references if desired.",
+        "contact1": "Contact us",
+        "contact2": "Have a technical problem? Want to provide feedback on a better feature? Inform us.",
+        "subject1": "Subject",
+        "subject2": "Please let us know how we can help you",
+        "message": "Your message",
+        "comment": "Leave your comment....",
+        "send": "Send"
     }
 }

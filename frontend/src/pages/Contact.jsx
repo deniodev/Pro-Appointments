@@ -1,7 +1,11 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
+import { useTranslation } from 'react-i18next';
+
 const Contact = () => {
+
+  const { t } = useTranslation();
 
   const form = useRef();
 
@@ -21,20 +25,20 @@ const Contact = () => {
     <section>
       <div className="px-4 mx-auto max-screen-md">
         <h2 className="heading text-center">
-          Contacte-nos
+        {t("contact1")}
         </h2>
         <p className='mb-8 lg:mb-16 font-light text-center text__para'>
-        Tem um problema técnico? Quer enviar feedback sobre um recurso melhor? Nos informe.
+        {t("contact2")}
         </p>
         <form ref={form} onSubmit={sendEmail} className='space-y-8 ml-5 mr-5'>
         <div>
             <label htmlFor="name"className='form__label'>
-              Nome
+              {t("name")}
             </label>
             <input type="name"
             name='user_name'
             id='name'
-            placeholder='Nome completo'
+            placeholder={t("fullName")}
             className="form__input mt-1" />
           </div>
           <div>
@@ -50,31 +54,31 @@ const Contact = () => {
           <div>
             <label htmlFor="subject"
             className='form__label'>
-              Assunto
+              {t("subject1")}
             </label>
             <input type="text"
             name='user_subject'
             id='subject'
-            placeholder='Deixe-nos saber como podemos ajudá-lo'
+            placeholder={t("subject2")}
             className="form__input mt-1" />
           </div>
           <div className="sm:col-span-2">
             <label htmlFor="message"
             className='form__label'>
-              Sua mensagem
+              {t("message")}
             </label>
             <textarea
             name='message'
             rows='6'
             type="text"
             id='message'
-            placeholder='Deixe o seu comentario....'
+            placeholder={t("comment")}
             className="form__input mt-1" />
           </div>
           <button 
           type="submit"
           className="btn rounded sm:w-fit">
-            Enviar
+            {t("send")}
           </button>
         </form>
 
