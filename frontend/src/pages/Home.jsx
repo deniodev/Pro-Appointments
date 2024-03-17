@@ -30,7 +30,7 @@ const Home = () => {
    <section>
     <div className="container">
         <div className="w-full">
-          <h2 className="heading text-center">Perguntas frequentes</h2>
+          <h2 className="heading text-center">{t("faq")}</h2>
           <FaqList />
         </div>
     </div>
