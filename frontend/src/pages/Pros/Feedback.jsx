@@ -52,7 +52,7 @@ const Feedback = ({reviews, totalRating}) => {
         {!showFeedbackForm && (
         <div className="text-center">
             <button className='btn' onClick={()=>setShowFeedbackForm(true)}>
-            Dê o seu Feedback
+            {t("yourFeedback")}
             </button>
         </div>
         )}

@@ -42,6 +42,11 @@
         "company": "Company",
         "addExperience": "Add Experience",
         "uploadPhoto": "Upload Photo",
-        "updateProfile": "Update Profile"
+        "updateProfile": "Update Profile",
+        "review1": "How would you rate the overall experience?",
+        "review2": "Share your feedback or suggestions",
+        "review3": "Write your message",
+        "sendFeedback": "Send Feedback",
+        "yourFeedback": "Give your Feedback"
     }
 }

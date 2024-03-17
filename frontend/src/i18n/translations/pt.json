@@ -42,7 +42,12 @@
         "company": "Empresa",
         "addExperience": "Adicionar Experiência",
         "uploadPhoto": "Carregar foto",
-        "updateProfile": "Atualizar Perfil"
+        "updateProfile": "Atualizar Perfil",
+        "review1": "Como você avaliaria a experiência geral?",
+        "review2": "Compartilhe seus comentários ou sugestões",
+        "review3": "Escreva sua mensagem",
+        "sendFeedback": "Enviar comentários",
+        "yourFeedback": "Dê o seu Feedback"
     }
 }
 
