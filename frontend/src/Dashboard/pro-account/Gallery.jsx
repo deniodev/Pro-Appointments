@@ -4,15 +4,18 @@ import { BASE_URL, token } from '../../config';
 import { toast } from "react-toastify";
 import Loader from '../../components/Loader/Loading';
 import Error from '../../components/Error/Error';
-
+import { useTranslation } from 'react-i18next';
 
 const upload_preset = import.meta.env.VITE_UPLOAD_PRESET;
 const cloud_name = import.meta.env.VITE_CLOUD_NAME;
 
 const Gallery = ({ proData }) => {
+
+    const { t } = useTranslation();
+
     const [images, setImages] = useState([]);
     const [urls, setUrls] = useState([]);
-    const [loadingUpload, setLoadingUpload] = useState(false); // State to manage upload loading
+    const [loadingUpload, setLoadingUpload] = useState(false);
 
     console.log("cloudinary urls", urls);
 
@@ -28,7 +31,7 @@ const Gallery = ({ proData }) => {
     },[proData]);
 
     const uploadImages = async () => {
-        setLoadingUpload(true); // Set loading state to true when upload starts
+        setLoadingUpload(true);
         const promises = images.map(image => {
             const data = new FormData();
             data.append('file', image);
@@ -46,11 +49,11 @@ const Gallery = ({ proData }) => {
         try {
             const uploadedUrls = await Promise.all(promises);
             setUrls(uploadedUrls);
-            setFormData({...formData, portfolio: uploadedUrls}); // Update formData with uploadedUrls
+            setFormData({...formData, portfolio: uploadedUrls});
         } catch (error) {
             console.error('Error uploading images:', error);
         } finally {
-            setLoadingUpload(false); // Set loading state to false when upload finishes
+            setLoadingUpload(false); 
         }
     };
 
@@ -102,12 +105,15 @@ const Gallery = ({ proData }) => {
                     multiple
                     title="Selecionar Fotos"
                 />
+
+                
+
                 <button
                     type="submit"
                     onClick={uploadImages}
                     className="mt-2 overflow-hidden bg-[#0066ff46] text-headingColor font-semibold text-[14px] py-2 px-4 rounded-lg"
                 >
-                    Visualizar
+                    {t("preview")}
                 </button>  
             </div> 
 
@@ -127,7 +133,7 @@ const Gallery = ({ proData }) => {
                     onClick={updateProfileHandler}
                     className="mt-2 overflow-hidden bg-[#0066ff46] text-headingColor font-semibold text-[14px] py-2 px-4 rounded-lg"
                 >
-                    Atualizar Fotos
+                    {t("updatePhotos")}
                 </button>
             </div>    
         </div>

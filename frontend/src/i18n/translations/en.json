@@ -95,6 +95,9 @@
         "serviceName5": "Renovations",
         "serviceDesc5": "Renovate and transform spaces with our renovation services. From small updates to large-scale projects, our dedicated team works to make your vision a reality.",
         "serviceName6": "Home Services",
-        "serviceDesc6": "Simplify your everyday life with our reliable home services. From residential cleaning to general repairs, we're here to help you keep your home in order."
+        "serviceDesc6": "Simplify your everyday life with our reliable home services. From residential cleaning to general repairs, we're here to help you keep your home in order.",
+        "preview": "Preview",
+        "updatePhotos": "Update Gallery",
+        "photos": "Select"
     }
 }
