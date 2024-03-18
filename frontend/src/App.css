@@ -54,6 +54,13 @@ body {
   box-shadow: 3px 3px -8px 3px #ddd;
 }
 
+.image-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+
 @media only screen and (max-width:768px) {
   .navigation{
     width: 100%;

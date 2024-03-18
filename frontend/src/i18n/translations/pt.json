@@ -95,7 +95,11 @@
         "serviceName5": "Reformas",
         "serviceDesc5": "Renove e transforme espaços com nossos serviços de reforma. Desde pequenas atualizações até projetos de grande escala, nossa equipe dedicada trabalha para tornar sua visão uma realidade.",
         "serviceName6": "Serviços Domésticos",
-        "serviceDesc6": "Simplifique sua vida cotidiana com nossos serviços domésticos confiáveis. De limpeza residencial a reparos gerais, estamos aqui para ajudar você a manter sua casa em ordem."
+        "serviceDesc6": "Simplifique sua vida cotidiana com nossos serviços domésticos confiáveis. De limpeza residencial a reparos gerais, estamos aqui para ajudar você a manter sua casa em ordem.",
+        "preview": "Visualizar",
+        "updatePhotos": "Atualizar Galeria",
+        "photos": "Selecionar"
+
     }
 }
 
