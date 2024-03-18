@@ -7,7 +7,7 @@ import Tabs from './Tabs';
 import starIcon from '../../assets/images/Star.png';
 import ProAbout from '../../pages/Pros/ProAbout';
 import Profile from './Profile';
-import Gallery from './gallery';
+import Gallery from './Gallery';
 
 const Dashboard = () => {
 

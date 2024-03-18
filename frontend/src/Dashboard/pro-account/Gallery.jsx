@@ -86,13 +86,7 @@ const Gallery = ({ proData }) => {
     };
 
     return (
-        <div>
-            <div>
-                <h2 className="text-headingColor font-bold text-[24px] leading-9 mb-10">
-                    Atualize a Sua Galeria  
-                </h2>  
-            </div> 
-
+        <div className='container'>
             <div className='flex-row'>
                 <input 
                     type="file"
@@ -103,16 +97,17 @@ const Gallery = ({ proData }) => {
                     className='block text-sm text-slate-500
                     file:mr-4 file:py-2  file:rounded-md
                     file:border-0 file:text-sm file:font-semibold
-                    file:bg-pink-50 file:bg-[#0066ff46]
+                    file:bg-[#0066ff46]
                     hover:file:bg-[#7e9dcc46]'
                     multiple
+                    title="Selecionar Fotos"
                 />
                 <button
                     type="submit"
                     onClick={uploadImages}
                     className="mt-2 overflow-hidden bg-[#0066ff46] text-headingColor font-semibold text-[14px] py-2 px-4 rounded-lg"
                 >
-                    Upload
+                    Visualizar
                 </button>  
             </div> 
 
@@ -120,7 +115,7 @@ const Gallery = ({ proData }) => {
 
             <div>
                 {!loadingUpload && urls.length > 0 && (
-                    <div className="image-container mt-[30px]">
+                    <div className="image-preview mt-2">
                         {urls.map((url, index) => (
                             <img key={index} src={url} alt={`Image ${index}`} className='mb-2'/>
                         ))}
@@ -130,9 +125,9 @@ const Gallery = ({ proData }) => {
                 <button
                     type="submit"
                     onClick={updateProfileHandler}
-                    className=" btn overflow-hidden font-semibold text-[18px] leading-[25px] py-3 px-4 rounded-lg"
+                    className="mt-2 overflow-hidden bg-[#0066ff46] text-headingColor font-semibold text-[14px] py-2 px-4 rounded-lg"
                 >
-                    Atualizar
+                    Atualizar Fotos
                 </button>
             </div>    
         </div>
