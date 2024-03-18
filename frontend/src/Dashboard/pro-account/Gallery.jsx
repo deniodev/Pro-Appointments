@@ -101,9 +101,10 @@ const Gallery = ({ proData }) => {
                     file:mr-4 file:py-2  file:rounded-md
                     file:border-0 file:text-sm file:font-semibold
                     file:bg-[#0066ff46]
-                    hover:file:bg-[#7e9dcc46]'
+                    hover:file:bg-[#7e9dcc46] '
                     multiple
                     title="Selecionar Fotos"
+                    
                 />
 
                 
@@ -111,7 +112,7 @@ const Gallery = ({ proData }) => {
                 <button
                     type="submit"
                     onClick={uploadImages}
-                    className="mt-2 overflow-hidden bg-[#0066ff46] text-headingColor font-semibold text-[14px] py-2 px-4 rounded-lg"
+                    className="mt-2 overflow-hidden bg-[#0066ff46] text-headingColor font-semibold text-[14px] py-2 px-4 rounded-lg w-[200px]"
                 >
                     {t("preview")}
                 </button>  
@@ -131,7 +132,7 @@ const Gallery = ({ proData }) => {
                 <button
                     type="submit"
                     onClick={updateProfileHandler}
-                    className="mt-2 overflow-hidden bg-[#0066ff46] text-headingColor font-semibold text-[14px] py-2 px-4 rounded-lg"
+                    className="mt-2 overflow-hidden bg-[#0066ff46] text-headingColor font-semibold text-[14px] py-2 px-4 rounded-lg w-[200px]"
                 >
                     {t("updatePhotos")}
                 </button>
