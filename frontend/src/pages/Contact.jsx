@@ -23,7 +23,7 @@ const Contact = () => {
 
   return (
     <section>
-      <div className="px-4 mx-auto max-screen-md">
+      <div className="px-4 mx-auto max-w-screen-md">
         <h2 className="heading text-center">
         {t("contact1")}
         </h2>
