@@ -29,7 +29,7 @@ export const LanguageSwitcher = () => {
           <option
             key={languageOption.value}
             value={languageOption.value}
-            selected={i18n.language === languageOption.value}
+            defaultValue={i18n.language === languageOption.value}
           >
             {languageOption.name}
           </option>
