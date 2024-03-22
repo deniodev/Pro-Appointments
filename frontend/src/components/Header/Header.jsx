@@ -59,7 +59,7 @@ const Header = () => {
           {/* ======== logo ======== */}
           <div>
             <Link to="/home">
-            <img src={logo} alt="" />
+            <img src={logo} alt="logo" />
             </Link>
           </div>
 
