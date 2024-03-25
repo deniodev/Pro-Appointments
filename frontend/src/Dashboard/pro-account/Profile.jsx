@@ -197,14 +197,28 @@ const Profile = ({ proData }) => {
         </div>
         <div className="mb-5">
           <p className="form__label">{t("city")}*</p>
-          <input
-            type="text"
-            name="city"
-            value={formData.city}
-            onChange={handleInputChange}
-            placeholder="Cidade"
-            className="form__input"
-          />
+           <select
+                name="city"
+                value={formData.city}
+                onChange={handleInputChange}
+                className="form__input py-3.5"
+              >
+                    <option value="Select">{t("select")}</option>
+                    <option value="Pemba">Pemba</option>
+                    <option value="Nampula">Nampula</option>
+                    <option value="Nacala">Nacala</option>
+                    <option value="Quelimane">Quelimane</option>
+                    <option value="Tete">Tete</option>
+                    <option value="Moatize">Moatize</option>
+                    <option value="Chimoio">Chimoio</option>
+                    <option value="Beira">Beira</option>
+                    <option value="Dondo">Dondo</option>
+                    <option value="Maxixe">Maxixe</option>
+                    <option value="Inhambane">Inhambane</option>
+                    <option value="Xai-Xai">Xai-Xai</option>
+                    <option value="Maputo">Maputo</option>
+                    <option value="Matola">Matola</option>
+              </select>
         </div>
         <div className="mb-5">
           <p className="form__label">Bio*</p>

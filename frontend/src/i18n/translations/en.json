@@ -98,6 +98,8 @@
         "serviceDesc6": "Simplify your everyday life with our reliable home services. From residential cleaning to general repairs, we're here to help you keep your home in order.",
         "preview": "Preview",
         "updatePhotos": "Update Gallery",
-        "photos": "Select"
+        "photos": "Select",
+        "allcity": "All",
+        "categories": "Categories"
     }
 }
