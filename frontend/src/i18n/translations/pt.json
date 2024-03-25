@@ -98,7 +98,9 @@
         "serviceDesc6": "Simplifique sua vida cotidiana com nossos serviços domésticos confiáveis. De limpeza residencial a reparos gerais, estamos aqui para ajudar você a manter sua casa em ordem.",
         "preview": "Visualizar",
         "updatePhotos": "Atualizar Galeria",
-        "photos": "Selecionar"
+        "photos": "Selecionar",
+        "allcity": "Todas Cidades",
+        "categories": "Categorias"
 
     }
 }
