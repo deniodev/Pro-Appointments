@@ -30,7 +30,7 @@ const Pros = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="container ">
         <div className="flex flex-col">
           <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-lg">
             <form className="">
@@ -96,7 +96,7 @@ const Pros = () => {
                 </div>
 
                 <div className="mt-6 grid w-full grid-cols-2 justify-end space-x-4 md:flex">
-                  <button className="rounded-lg bg-gray-200 px-8 py-2 font-medium text-gray-700 outline-none hover:opacity-80 focus:ring">Reset</button>
+                  <button className="bg-primaryColor text-white text-[18px]  rounded-lg px-8 py-2 font-medium outline-none hover:opacity-80 focus:ring">Reset</button>
                 </div>
               </div>
             </form>
