@@ -9,9 +9,9 @@
         "contact": "Contact",
         "search": "Search",
         "all": "All Categories",
-        "aTec": "Technical Support",
+        "aTec": "Technical",
         "aulas": "Classes",
-        "dTec": "Design and Tech",
+        "dTec": "Tech",
         "eventos": "Events",
         "reformas": "Renovations",
         "sDom": "Home Services",
@@ -100,6 +100,6 @@
         "updatePhotos": "Update Gallery",
         "photos": "Select",
         "allcity": "All",
-        "categories": "Categories"
+        "categories": "Category"
     }
 }

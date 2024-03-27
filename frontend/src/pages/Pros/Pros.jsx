@@ -1,10 +1,11 @@
+import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import ProCard from '../../components/Pros/ProCard';
 import { BASE_URL } from '../../config';
 import useFetchData from '../../hooks/useFetchData';
 import Loader from '../../components/Loader/Loading';
 import Error from '../../components/Error/Error';
-import { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { FaSearch } from 'react-icons/fa';
 
 const Pros = () => {
   const { t } = useTranslation();
@@ -12,7 +13,8 @@ const Pros = () => {
   const [query, setQuery] = useState('');
   const [debounceQuery, setDebounceQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [selectedCity, setSelectedCity] = useState('All'); // State for selected city
+  const [selectedCity, setSelectedCity] = useState('All');
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); // Assuming mobile device width is 768px or less
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -22,6 +24,18 @@ const Pros = () => {
     return () => clearTimeout(timeout);
   }, [query]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const { data: pros, loading, error } = useFetchData(`${BASE_URL}/pros?query=${debounceQuery}`);
 
   const filteredProsByCategory = selectedCategory === 'All' ? pros : pros.filter(pro => pro.specialization === selectedCategory);
@@ -29,95 +43,72 @@ const Pros = () => {
   const filteredProsByCityAndCategory = selectedCity === 'All' ? filteredProsByCategory : filteredProsByCategory.filter(pro => pro.city === selectedCity);
 
   return (
-    <>
-      <div className="container ">
-        <div className="flex flex-col">
-          <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-lg">
-            <form className="">
-              <div className="relative mb-10 w-full flex  items-center justify-between rounded-md">
-                <svg className="absolute left-2 block h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="11" cy="11" r="8" className=""></circle>
-                  <line x1="21" y1="21" x2="16.65" y2="16.65" className=""></line>
-                </svg>
-                <input
-                  type="search"
-                  className="h-12 w-full cursor-text rounded-md border border-gray-100 bg-gray-100 py-4 pr-4 pl-12 shadow-sm outline-none focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
-                  placeholder={t("search")}
-                  value={query}
-                  onChange={e => setQuery(e.target.value)}
-                />
-              </div>
+    <div className="container mx-auto py-8">
+      <div className="mb-8 items-center justify-between">
+        <div className="max-w-[900px] mt-[30px] mx-auto bg-[#0066ff2c] rounded-md flex items-center justify-between">
+          <input
+            type="search"
+            className='py-4 pl-4 pr-2 bg-transparent w-full focus:outline-none cursor-text'
+            placeholder={isMobile ? '' : t("search")}
+            value={query}
+            onChange={e => setQuery(e.target.value)}
+          />
+          <FaSearch className={`mr-3 ${isMobile ? 'text-5xl' : 'text-2xl'}`} />
 
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-                <div className="flex flex-col">
-                  <label htmlFor="manufacturer" className="text-sm font-medium text-stone-600">{t("categories")}</label>
+          <select
+            id="category"
+            className="appearance-none hover:bg-primaryColor py-[15px] px-2  hover:text-white font-[600] cursor-pointer text-center bg-[#0066ff2c] text-black"
+            value={selectedCategory}
+            onChange={e => setSelectedCategory(e.target.value)}
+          >
+            <option value="All">{t("categories")}</option>
+            <option value="Assistência Técnica">{t("aTec")}</option>
+            <option value="Aulas">{t("aulas")}</option>
+            <option value="Design e Tecnologia">{t("dTec")}</option>
+            <option value="Eventos">{t("eventos")}</option>
+            <option value="Reformas">{t("reformas")}</option>
+            <option value="Serviços Domésticos">{t("sDom")}</option>
+          </select>
 
-                  <select
-                    className="cursor-pointer appearance-none mt-2 block w-full rounded-md border border-gray-100 bg-gray-100 px-2 py-2 shadow-sm outline-none focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
-                    value={selectedCategory}
-                    onChange={e => setSelectedCategory(e.target.value)}
-                  >
-                    <option value="All">{t("all")}</option>
-                    <option value="Assistência Técnica">{t("aTec")}</option>
-                    <option value="Aulas">{t("aulas")}</option>
-                    <option value="Design e Tecnologia">{t("dTec")}</option>
-                    <option value="Eventos">{t("eventos")}</option>
-                    <option value="Reformas">{t("reformas")}</option>
-                    <option value="Serviços Domésticos">{t("sDom")}</option>
-                  </select>
-                </div>
+          <p className=' bg-[#0066ff2c] py-[13px]   text-black text-xl'>
+            |
+          </p>
 
-
-                <div className="flex flex-col">
-                  <label htmlFor="city" className="text-sm font-medium text-stone-600">{t("city")}</label>
-
-                  <select
-                    id="city"
-                    className="appearance-none mt-2 block w-full cursor-pointer rounded-md border border-gray-100 bg-gray-100 px-2 py-2 shadow-sm outline-none focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
-                    value={selectedCity}
-                    onChange={e => setSelectedCity(e.target.value)} // Update selected city on change
-                  >
-                    <option value="All">{t("allcity")}</option>
-                    <option value="Pemba">Pemba</option>
-                    <option value="Nampula">Nampula</option>
-                    <option value="Nacala">Nacala</option>
-                    <option value="Quelimane">Quelimane</option>
-                    <option value="Tete">Tete</option>
-                    <option value="Moatize">Moatize</option>
-                    <option value="Chimoio">Chimoio</option>
-                    <option value="Beira">Beira</option>
-                    <option value="Dondo">Dondo</option>
-                    <option value="Maxixe">Maxixe</option>
-                    <option value="Inhambane">Inhambane</option>
-                    <option value="Xai-Xai">Xai-Xai</option>
-                    <option value="Maputo">Maputo</option>
-                    <option value="Matola">Matola</option>
-                  </select>
-                </div>
-
-                <div className="mt-6 grid w-full grid-cols-2 justify-end space-x-4 md:flex">
-                  <button className="bg-primaryColor text-white text-[18px]  rounded-lg px-8 py-2 font-medium outline-none hover:opacity-80 focus:ring">Reset</button>
-                </div>
-              </div>
-            </form>
-          </div>
+          <select
+            id="city"
+            className="appearance-none hover:bg-primaryColor py-[15px] px-2  hover:text-white font-[600] cursor-pointer rounded-r-md text-center bg-[#0066ff2c] text-black"
+            value={selectedCity}
+            onChange={e => setSelectedCity(e.target.value)}
+          >
+            <option value="All">{t("city")}</option>
+            <option value="Pemba">Pemba</option>
+            <option value="Nampula">Nampula</option>
+            <option value="Nacala">Nacala</option>
+            <option value="Quelimane">Quelimane</option>
+            <option value="Tete">Tete</option>
+            <option value="Moatize">Moatize</option>
+            <option value="Chimoio">Chimoio</option>
+            <option value="Beira">Beira</option>
+            <option value="Dondo">Dondo</option>
+            <option value="Maxixe">Maxixe</option>
+            <option value="Inhambane">Inhambane</option>
+            <option value="Xai-Xai">Xai-Xai</option>
+            <option value="Maputo">Maputo</option>
+            <option value="Matola">Matola</option>
+          </select>
         </div>
       </div>
 
-      <section>
-        <div className="container">
-          {loading && <Loader />}
-          {error && <Error />}
-          {!loading && !error && (
-            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5'>
-              {filteredProsByCityAndCategory.map((pro, index) => (
-                <ProCard key={index} pro={pro} />
-              ))}
-            </div>
-          )}
+      {loading && <Loader />}
+      {error && <Error />}
+      {!loading && !error && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {filteredProsByCityAndCategory.map((pro, index) => (
+            <ProCard key={index} pro={pro} />
+          ))}
         </div>
-      </section>
-    </>
+      )}
+    </div>
   )
 }
 

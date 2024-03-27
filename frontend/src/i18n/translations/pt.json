@@ -9,12 +9,12 @@
         "contact": "Contacto",
         "search": "Pesquisar",
         "all": "Todas Categorias",
-        "aTec": "Assistência Técnica",
+        "aTec": "Ass Técnica",
         "aulas": "Aulas",
-        "dTec": "Design e Tecnologia",
+        "dTec": "Tech",
         "eventos": "Eventos",
         "reformas": "Reformas",
-        "sDom": "Serviços Domésticos",
+        "sDom": "Domésticos",
         "about": "Sobre",
         "education": "Educação",
         "experience": "Experiência",
@@ -100,7 +100,7 @@
         "updatePhotos": "Atualizar Galeria",
         "photos": "Selecionar",
         "allcity": "Todas Cidades",
-        "categories": "Categorias"
+        "categories": "Categoria"
 
     }
 }
