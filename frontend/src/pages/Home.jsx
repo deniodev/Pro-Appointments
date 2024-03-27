@@ -17,12 +17,13 @@ const Home = () => {
         <h2 className='text-xl text-gray-400 text-center'>
           {t("hero2")}
         </h2>
-
-    </div>
-
-      <div className="container">
+        
+        <div className="container">
       <Pros />
       </div>
+    </div>
+
+    
     </section>
 
 
