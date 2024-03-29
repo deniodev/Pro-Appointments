@@ -7,11 +7,11 @@
         "home": "Home",
         "service": "Services",
         "contact": "Contact",
-        "search": "Search",
-        "all": "All Categories",
-        "aTec": "Technical",
+        "search": "Search by name",
+        "all": "All",
+        "aTec": "Technical Support",
         "aulas": "Classes",
-        "dTec": "Tech",
+        "dTec": "Tech and Design",
         "eventos": "Events",
         "reformas": "Renovations",
         "sDom": "Home Services",
@@ -99,7 +99,6 @@
         "preview": "Preview",
         "updatePhotos": "Update Gallery",
         "photos": "Select",
-        "allcity": "All",
         "categories": "Category"
     }
 }

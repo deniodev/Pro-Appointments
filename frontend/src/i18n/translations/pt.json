@@ -7,14 +7,14 @@
         "home": "Home",
         "service": "Serviços",
         "contact": "Contacto",
-        "search": "Pesquisar",
-        "all": "Todas Categorias",
-        "aTec": "Ass Técnica",
+        "search": "Pesquisa pelo nome",
+        "all": "Todas",
+        "aTec": "Assistência Técnica",
         "aulas": "Aulas",
-        "dTec": "Tech",
+        "dTec": "Design e Tecnologia",
         "eventos": "Eventos",
         "reformas": "Reformas",
-        "sDom": "Domésticos",
+        "sDom": "Serviços Domésticos",
         "about": "Sobre",
         "education": "Educação",
         "experience": "Experiência",
@@ -99,7 +99,6 @@
         "preview": "Visualizar",
         "updatePhotos": "Atualizar Galeria",
         "photos": "Selecionar",
-        "allcity": "Todas Cidades",
         "categories": "Categoria"
 
     }
