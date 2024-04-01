@@ -99,7 +99,8 @@
         "preview": "Visualizar",
         "updatePhotos": "Atualizar Galeria",
         "photos": "Selecionar",
-        "categories": "Categoria"
+        "categories": "Categoria",
+        "isApproved": "Para obter aprovação, actualize todos os dados do seu perfil e a galeria com fotografias de trabalhos recentes."
 
     }
 }

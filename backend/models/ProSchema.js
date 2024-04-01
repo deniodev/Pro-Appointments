@@ -9,6 +9,7 @@ const ProSchema = new mongoose.Schema({
   role: {
     type: String,
   },
+  gender: { type: String, enum: ["male", "female",] },
 
   // Fields for pro only
   specialization: { type: String },
@@ -34,7 +35,7 @@ const ProSchema = new mongoose.Schema({
   isApproved: {
     type: String,
     enum: ["pending", "approved", "cancelled"],
-    default: "approved",
+    default: "pending",
   },
   portfolio: {
     type: Array,
