@@ -99,6 +99,7 @@
         "preview": "Preview",
         "updatePhotos": "Update Gallery",
         "photos": "Select",
-        "categories": "Category"
+        "categories": "Category",
+        "isApproved": "To obtain approval, update all your profile data and the gallery with photos of recent work."
     }
 }

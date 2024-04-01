@@ -8,12 +8,15 @@ import starIcon from '../../assets/images/Star.png';
 import ProAbout from '../../pages/Pros/ProAbout';
 import Profile from './Profile';
 import Gallery from './Gallery';
+import { useTranslation } from "react-i18next";
 
 const Dashboard = () => {
 
   const {data, loading, error} = useGetProfile(`${BASE_URL}/pros/profile/me`);
 
   const [tab,setTab] = useState('overview');
+
+  const { t } = useTranslation();
 
   return (
    <section>
@@ -44,8 +47,7 @@ const Dashboard = () => {
 
                 <span className='sr-only'>Info</span>
                 <div className="ml-3 text-sm font-medium">
-                  To get approval please complete your profile. We&apos;ll 
-                  review manually and approve within 3 days.
+                  {t("isApproved")}
                 </div>
                 
               </div>
