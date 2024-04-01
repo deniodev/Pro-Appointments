@@ -11,7 +11,7 @@ const UserSchema = new mongoose.Schema({
     enum: ["client", "admin"],
     default: "client",
   },
-  gender: { type: String, enum: ["male", "female", "other"] },
+  gender: { type: String, enum: ["male", "female"] },
 });
 
 export default mongoose.model("User", UserSchema);

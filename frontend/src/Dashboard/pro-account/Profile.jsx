@@ -243,9 +243,9 @@ const Profile = ({ proData }) => {
                 onChange={handleInputChange}
                 className="form__input py-3.5"
               >
-                <option value="">{t("select")}</option>
-                <option value="male">{t("male")}</option>
-                <option value="female">{t("female")}</option>
+                <option value="Select">{t("select")}</option>
+                <option value="Male">{t("male")}</option>
+                <option value="Female">{t("female")}</option>
               </select>
             </div>
             <div>
