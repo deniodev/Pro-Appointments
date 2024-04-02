@@ -42,6 +42,9 @@ const ProSchema = new mongoose.Schema({
   },
   city: {
     type: String,
+  },
+  company: {
+    type: String,
   }
 });
 
