@@ -52,9 +52,6 @@ const MyAccount = () => {
                     <button onClick={handleLogout} className='w-full bg-[#181A1E] p-3 text-[16px] leading-7 rounded-md text-white'>
                         {t("logout")}
                     </button>
-                    <button className='w-full bg-red-600 mt-4 p-3 text-[16px] leading-7 rounded-md text-white'>
-                    {t("deleteAccount")}
-                    </button>
                 </div>
             </div>
 
