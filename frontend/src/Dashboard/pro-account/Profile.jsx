@@ -1,14 +1,12 @@
-/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import { AiOutlineDelete } from "react-icons/ai";
 import uploadImageToCloudinary from "../../utils/uploadCloudinary";
 import { BASE_URL, token } from "../../config";
 import { toast } from "react-toastify";
 
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 const Profile = ({ proData }) => {
-
   const { t } = useTranslation();
 
   const [formData, setFormData] = useState({
@@ -23,10 +21,11 @@ const Profile = ({ proData }) => {
     experiences: [],
     about: "",
     photo: null,
-    city: ""
+    city: "",
+    company: "",
   });
 
-  useEffect(()=> {
+  useEffect(() => {
     setFormData({
       name: proData?.name,
       email: proData?.email,
@@ -39,44 +38,44 @@ const Profile = ({ proData }) => {
       about: proData?.about,
       photo: proData?.photo,
       city: proData?.city,
+      company: proData?.company,
     });
-  },[proData]);
+  }, [proData]);
 
-  const handleInputChange = e => {
-    setFormData({ ...formData, [e.target.name]:e.target.value });
+  const handleInputChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleFileInputChange = async event => {
+  const handleFileInputChange = async (event) => {
     const file = event.target.files[0];
     const data = await uploadImageToCloudinary(file);
 
     setFormData({ ...formData, photo: data?.url });
   };
 
-  const updateProfileHandler = async e => {
+  const updateProfileHandler = async (e) => {
     e.preventDefault();
 
     try {
-      const res = await fetch(`${BASE_URL}/pros/${proData._id}`,{
-        method: 'PUT',
-        headers:{
-          'content-type':'application/json',
-          Authorization:`Bearer ${token}`
+      const res = await fetch(`${BASE_URL}/pros/${proData._id}`, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify(formData)
-      })
+        body: JSON.stringify(formData),
+      });
 
-      const result = await res.json()
+      const result = await res.json();
 
-      if(!res.ok) {
-        throw Error(result.message)
+      if (!res.ok) {
+        throw Error(result.message);
       }
 
       toast.success(result.message);
     } catch (error) {
-      toast.error(err.message)
+      toast.error(err.message);
     }
-
   };
 
   // reusable function for adding item
@@ -111,7 +110,7 @@ const Profile = ({ proData }) => {
     }));
   };
 
-  const addQualification = e => {
+  const addQualification = (e) => {
     e.preventDefault();
 
     addItem("qualifications", {
@@ -151,11 +150,10 @@ const Profile = ({ proData }) => {
     deleteItem("experiences", index);
   };
 
-
   return (
     <div>
       <h2 className="text-headingColor font-bold text-[24px] leading-9 mb-10">
-      {t("profile")}
+        {t("profile")}
       </h2>
 
       <form>
@@ -197,28 +195,28 @@ const Profile = ({ proData }) => {
         </div>
         <div className="mb-5">
           <p className="form__label">{t("city")}*</p>
-           <select
-                name="city"
-                value={formData.city}
-                onChange={handleInputChange}
-                className="form__input py-3.5"
-              >
-                    <option value="Select">{t("select")}</option>
-                    <option value="Pemba">Pemba</option>
-                    <option value="Nampula">Nampula</option>
-                    <option value="Nacala">Nacala</option>
-                    <option value="Quelimane">Quelimane</option>
-                    <option value="Tete">Tete</option>
-                    <option value="Moatize">Moatize</option>
-                    <option value="Chimoio">Chimoio</option>
-                    <option value="Beira">Beira</option>
-                    <option value="Dondo">Dondo</option>
-                    <option value="Maxixe">Maxixe</option>
-                    <option value="Inhambane">Inhambane</option>
-                    <option value="Xai-Xai">Xai-Xai</option>
-                    <option value="Maputo">Maputo</option>
-                    <option value="Matola">Matola</option>
-              </select>
+          <select
+            name="city"
+            value={formData.city}
+            onChange={handleInputChange}
+            className="form__input py-3.5"
+          >
+            <option value="Select">{t("select")}</option>
+            <option value="Pemba">Pemba</option>
+            <option value="Nampula">Nampula</option>
+            <option value="Nacala">Nacala</option>
+            <option value="Quelimane">Quelimane</option>
+            <option value="Tete">Tete</option>
+            <option value="Moatize">Moatize</option>
+            <option value="Chimoio">Chimoio</option>
+            <option value="Beira">Beira</option>
+            <option value="Dondo">Dondo</option>
+            <option value="Maxixe">Maxixe</option>
+            <option value="Inhambane">Inhambane</option>
+            <option value="Xai-Xai">Xai-Xai</option>
+            <option value="Maputo">Maputo</option>
+            <option value="Matola">Matola</option>
+          </select>
         </div>
         <div className="mb-5">
           <p className="form__label">Bio*</p>
@@ -281,7 +279,7 @@ const Profile = ({ proData }) => {
                       name="startingDate"
                       value={item.startingDate}
                       className="form__input"
-                      onChange={ e => handleQualificationChange(e, index)}
+                      onChange={(e) => handleQualificationChange(e, index)}
                     />
                   </div>
                   <div>
@@ -291,7 +289,7 @@ const Profile = ({ proData }) => {
                       name="endingDate"
                       value={item.endingDate}
                       className="form__input"
-                      onChange={e => handleQualificationChange(e, index)}
+                      onChange={(e) => handleQualificationChange(e, index)}
                     />
                   </div>
                 </div>
@@ -303,7 +301,7 @@ const Profile = ({ proData }) => {
                       name="degree"
                       value={item.degree}
                       className="form__input"
-                      onChange={e => handleQualificationChange(e, index)}
+                      onChange={(e) => handleQualificationChange(e, index)}
                     />
                   </div>
                   <div>
@@ -313,7 +311,7 @@ const Profile = ({ proData }) => {
                       name="university"
                       value={item.university}
                       className="form__input"
-                      onChange={ e => handleQualificationChange(e, index)}
+                      onChange={(e) => handleQualificationChange(e, index)}
                     />
                   </div>
                 </div>
@@ -348,7 +346,7 @@ const Profile = ({ proData }) => {
                       name="startingDate"
                       value={item.startingDate}
                       className="form__input"
-                      onChange={e => handleExperienceChange(e, index)}
+                      onChange={(e) => handleExperienceChange(e, index)}
                     />
                   </div>
                   <div>
@@ -358,7 +356,7 @@ const Profile = ({ proData }) => {
                       name="endingDate"
                       value={item.endingDate}
                       className="form__input"
-                      onChange={ e=> handleExperienceChange(e, index)}
+                      onChange={(e) => handleExperienceChange(e, index)}
                     />
                   </div>
                 </div>
@@ -370,7 +368,7 @@ const Profile = ({ proData }) => {
                       name="position"
                       value={item.position}
                       className="form__input"
-                      onChange={ e => handleExperienceChange(e, index)}
+                      onChange={(e) => handleExperienceChange(e, index)}
                     />
                   </div>
                   <div>
@@ -380,7 +378,7 @@ const Profile = ({ proData }) => {
                       name="company"
                       value={item.company}
                       className="form__input"
-                      onChange={ e => handleExperienceChange(e, index)}
+                      onChange={(e) => handleExperienceChange(e, index)}
                     />
                   </div>
                 </div>
