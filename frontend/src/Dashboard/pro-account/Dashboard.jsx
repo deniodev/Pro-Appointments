@@ -56,10 +56,9 @@ const Dashboard = () => {
                 <div className="mt-8">
                   {tab === 'overview'  && <div>
                       <div className="flex items-center gap-4 mb-10">
-                        <figure className='max-w-[200px] max-h-[200px]'>
-                          <img src={data?.photo} alt="" className='w-full'/>
-                          </figure>
-
+       
+                          <img src={data?.photo} alt="" className='max-w-[200px] max-h-[200px] rounded-md'/>
+  
                           <div className="">
                             <span className='bg-[#CCF0F3] text-irisBlueColor py-1 px-4 lg:py-2 lg:px-6 rounded
                             text-[12px] leading-4 lg:text-[16px] lg:leading-6 font-semibold pl-0'>
