@@ -23,7 +23,7 @@ export const LanguageSwitcher = () => {
     <div className="flex">
       <select
         onChange={handleLanguageChange}
-        className="cursor-pointer text-[20px] leading-7 font-[800] appearance-none hover:bg-[#0066ff2c] rounded-md"
+        className="cursor-pointer text-[20px] leading-7 font-[800] appearance-none  rounded-md"
       >
         {languageOptions.map((languageOption) => (
           <option
