@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { AiOutlineDelete } from "react-icons/ai";
 import uploadImageToCloudinary from "../../utils/uploadCloudinary";
 import { BASE_URL, token } from "../../config";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 import HashLoader from "react-spinners/HashLoader";
 

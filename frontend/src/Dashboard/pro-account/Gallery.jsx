@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { BASE_URL, token } from "../../config";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 import Loader from "../../components/Loader/Loading";
 import Error from "../../components/Error/Error";
 import { useTranslation } from "react-i18next";
