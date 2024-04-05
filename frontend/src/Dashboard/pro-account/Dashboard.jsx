@@ -13,7 +13,10 @@ import noPhoto from "../../assets/images/no-photo.jpg"
 
 const Dashboard = () => {
 
-  const {data, loading, error} = useGetProfile(`${BASE_URL}/pros/profile/me`);
+  const {data, loading, error} = useGetProfile(
+    `${BASE_URL}/pros/profile/me`, 
+    {headers: { 'Cache-Control': 'no-cache' }}
+  );
 
   const [tab,setTab] = useState('overview');
 
