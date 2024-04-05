@@ -3,26 +3,27 @@ import { AiOutlineDelete } from "react-icons/ai";
 import uploadImageToCloudinary from "../../utils/uploadCloudinary";
 import { BASE_URL, token } from "../../config";
 import { toast } from "react-toastify";
-
 import { useTranslation } from "react-i18next";
+import HashLoader from "react-spinners/HashLoader";
 
 const Profile = ({ proData }) => {
   const { t } = useTranslation();
+
+  const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
     phone: "",
+    city: "",
     bio: "",
     gender: "",
     specialization: "",
     qualifications: [],
     experiences: [],
     about: "",
-    photo: null,
-    city: "",
-    company: "",
+    photo: "",
   });
 
   useEffect(() => {
@@ -30,6 +31,7 @@ const Profile = ({ proData }) => {
       name: proData?.name,
       email: proData?.email,
       phone: proData?.phone,
+      city: proData?.city,
       bio: proData?.bio,
       gender: proData?.gender,
       specialization: proData?.specialization,
@@ -37,8 +39,6 @@ const Profile = ({ proData }) => {
       experiences: proData?.experiences,
       about: proData?.about,
       photo: proData?.photo,
-      city: proData?.city,
-      company: proData?.company,
     });
   }, [proData]);
 
@@ -55,6 +55,7 @@ const Profile = ({ proData }) => {
 
   const updateProfileHandler = async (e) => {
     e.preventDefault();
+    setLoading(true)
 
     try {
       const res = await fetch(`${BASE_URL}/pros/${proData._id}`, {
@@ -75,6 +76,8 @@ const Profile = ({ proData }) => {
       toast.success(result.message);
     } catch (error) {
       toast.error(err.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -421,7 +424,7 @@ const Profile = ({ proData }) => {
               <img
                 src={formData.photo}
                 alt=""
-                className="w-full rounded-full"
+                className="w-[58px] h-[58px] rounded-full"
               />
             </figure>
           )}
@@ -453,7 +456,12 @@ const Profile = ({ proData }) => {
             onClick={updateProfileHandler}
             className="bg-primaryColor text-white text-[18px] leading-[30px] w-full py-3 px-4 rounded-lg"
           >
-            {t("updateProfile")}
+            {loading ? (
+              <HashLoader size={25} color="#fff" />
+            ) : (
+              `${t("updateProfile")}`
+            )}
+            
           </button>
         </div>
       </form>
