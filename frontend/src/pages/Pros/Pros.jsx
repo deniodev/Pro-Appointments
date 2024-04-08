@@ -85,6 +85,7 @@ const Pros = () => {
             >
               <option value="All">{t("all")}</option>
               <option value="Pemba">Pemba</option>
+              <option value="Lichinga">Lichinga</option>
               <option value="Nampula">Nampula</option>
               <option value="Nacala">Nacala</option>
               <option value="Quelimane">Quelimane</option>
