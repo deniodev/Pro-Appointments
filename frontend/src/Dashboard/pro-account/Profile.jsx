@@ -55,7 +55,7 @@ const Profile = ({ proData }) => {
 
   const updateProfileHandler = async (e) => {
     e.preventDefault();
-    setLoading(true)
+    setLoading(true);
 
     try {
       const res = await fetch(`${BASE_URL}/pros/${proData._id}`, {
@@ -206,6 +206,7 @@ const Profile = ({ proData }) => {
           >
             <option value="Select">{t("select")}</option>
             <option value="Pemba">Pemba</option>
+            <option value="Lichinga">Lichinga</option>
             <option value="Nampula">Nampula</option>
             <option value="Nacala">Nacala</option>
             <option value="Quelimane">Quelimane</option>
@@ -230,7 +231,7 @@ const Profile = ({ proData }) => {
             onChange={handleInputChange}
             placeholder="Bio"
             className="form__input"
-            maxLength={100}
+            maxLength={35}
           />
         </div>
 
@@ -461,7 +462,6 @@ const Profile = ({ proData }) => {
             ) : (
               `${t("updateProfile")}`
             )}
-            
           </button>
         </div>
       </form>
