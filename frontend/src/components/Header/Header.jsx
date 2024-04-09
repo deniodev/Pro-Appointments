@@ -1,10 +1,10 @@
 import { useEffect, useRef, useContext } from "react";
-import logo from "../../assets/images/logo2.png";
+import logo from "../../assets/images/logo.png";
 import { NavLink, Link } from "react-router-dom";
 import { BiMenu } from "react-icons/bi";
 import { authContext } from "../../context/AuthContext";
 import { LanguageSwitcher } from "../LanguageSwitcher";
-import noPhoto from '../../assets/images/no-photo.jpg'
+import noPhoto from "../../assets/images/no-photo.jpg";
 import { useTranslation } from "react-i18next";
 
 const Header = () => {
@@ -101,8 +101,8 @@ const Header = () => {
             ) : (
               <Link to="/login">
                 <button
-                  className="bg-primaryColor py-2 px-6 text-white font-[600] 
-            h-[44px] flex items-center justify-center rounded-[50px]"
+                  className="bg-primaryColor py-2 px-3 text-white font-[600] 
+            h-[35px] flex items-center justify-center rounded-[50px]"
                 >
                   {t("login")}
                 </button>
