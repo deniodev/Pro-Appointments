@@ -9,7 +9,7 @@ import proRoute from "./Routes/pro.js";
 import reviewRoute from "./Routes/review.js";
 
 
-dotenv.config()
+dotenv.config();
 
 const app = express()
 const port = process.env.PORT || 8000
