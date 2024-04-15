@@ -13,7 +13,7 @@ const MyAccount = () => {
     const { t } = useTranslation();
 
     const {dispatch} = useContext(authContext);
-    const [tab,setTab] = useState('bookings');
+    const [tab,setTab] = useState('settings');
 
     const {data:userData, loading, error} = useGetProfile(`${BASE_URL}/users/profile/me`);
 

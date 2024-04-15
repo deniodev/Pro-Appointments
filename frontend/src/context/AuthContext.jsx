@@ -1,10 +1,11 @@
-import { createContext, useEffect, useReducer } from "react"
+import { createContext, useEffect, useReducer } from "react";
+import Cookies from "js-cookie";
 
 const initialState = {
-    user: localStorage.getItem('user') !== undefined ? JSON.parse(localStorage.getItem('user')) : null,
-    role: localStorage.getItem('role') || null,
-    token: localStorage.getItem('token') || null
-  };
+    user: Cookies.get('user') ? JSON.parse(Cookies.get('user')) : null,
+    role: Cookies.get('role') || null,
+    token: Cookies.get('token') || null
+};
   
 
 export const authContext = createContext(initialState);
@@ -45,9 +46,9 @@ export const AuthContextProvider = ({children}) => {
     const [state, dispatch] = useReducer(authReducer, initialState);
 
     useEffect(() => {
-        localStorage.setItem('user', JSON.stringify(state.user))
-        localStorage.setItem('role', state.role)
-        localStorage.setItem('token', state.token)
+        Cookies.set('user', JSON.stringify(state.user));
+        Cookies.set('role', state.role);
+        Cookies.set('token', state.token);
     }, [state])
 
     return (
